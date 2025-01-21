@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#FFA500">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=4e30be087695ccfd071aca173087253490e4700a">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    
+    <header class="page-header" role="banner">
+      <h1 style="color: white;" class="project-name">⏱️ ILO 3: Profiling and optimization (15%)</h1>
+      <h2 style="color: white;">
+        <a class="author" href="mailto: 230058.buas.nl">Finn Thiesen</a>
+      </h2>
+      <h2 style="color: white;">230058</h2>
+      <a href="/" class="btn"> 🏠 </a>
+
+      
+        <a href="/ilos/Blog.html" class="btn"> Blog Post</a>
+      
+        <a href="/ilos/ILO1.html" class="btn"> 🗺️ ILO 1</a>
+      
+        <a href="/ilos/ILO2.html" class="btn"> 🔬 ILO 2</a>
+      
+        <a href="/ilos/ILO3.html" class="btn"> ⏱️ ILO 3</a>
+      
+        <a href="/ilos/ILO4.html" class="btn"> 🦾 ILO 4</a>
+      
+        <a href="/ilos/ILO5.html" class="btn"> 🎁 ILO 5</a>
+      
+      
+      <a href="/retake.html" class="btn">🔁 Retake</a>
+    </header>
+
+    <div class="site-name">
+      <a href="/" title="Return to the homepage">🐝 2024-2025 Y2A PR - Learning Log</a>
+    </div>
+
+    <main id="content" class="main-content" role="main">
+      <p>As a programmer, <strong>I profile and optimize my code using the appropriate tools and techniques</strong>, so that my software works efficiently even in challenging scenarios.</p>
+
+<h1 id="-suggested-evidence">💭 Suggested Evidence</h1>
+<ul>
+  <li>Profiler output -&gt; Descriptions of optimizations -&gt; Improved profiler output</li>
+  <li>Videos / code of stress tests</li>
+  <li>Analysis of performance / algorithms</li>
+</ul>
+
+<h1 id="-detailed-rubric">💯 Detailed Rubric</h1>
+
+<p>🔴 <strong>Poor:</strong> Some evidence of profiling the performance of the student’s codebase.</p>
+
+<p>🟠 <strong>Insufficient:</strong> Evidence of executing the stress tests as outlined in the plan and profiling them using the appropriate tools, enough to indicate a basic understanding of profiling.</p>
+
+<p>🟡 <strong>Sufficient:</strong> Evidence of non-trivial optimizations in the codebase based on the profiling results of the stress tests. The student clearly shows their process of profiling, optimizing the code, and verifying the outcome.</p>
+
+<p>🟢 <strong>Good:</strong> The profiling and optimization work clearly looks for the limits of the developed features, e.g. by testing multiple values of multiple relevant parameters. This shows that the student has good insight into the scalability of the system.</p>
+
+<p>🔵 <strong>Excellent:</strong> The work leads to highly optimized code and/or good future optimization opportunities. The student shows a deep understanding of optimization and performance analysis within the project’s domain (e.g. algorithmic analysis, hardware constraints, etc).</p>
+
+<h1 id="-evidence">🔍 Evidence</h1>
+
+<p>I found it a bit difficult finding out what I wanted to stress test in my project.
+<br />This because the main limits are set by the internet speed on my device.
+<br />I still found ways to stress test my library.</p>
+
+<h2 id="package-for-you-package-for-me-package-for-everyone">Package for you, package for me, package for everyone!</h2>
+
+<p>For the first test I made a set-up so that I can send lots of packages to another client.
+<br />
+<strong>This test is done via my own device towards my own device.
+This means the limit is my own devices hardwere,</strong> still I want to include this.</p>
+
+<p>Set-up:</p>
+<ul>
+  <li>I have an imgui window where I can change how many packages I can send and at which size.</li>
+  <li>The size stands for how many random numbers I add to the package.</li>
+  <li>I will be using wireshark to check the time between the first and last message.</li>
+  <li>Using the info I got, I can calculate the speed in MegaBytes Per Second.</li>
+</ul>
+
+<p>Here are the results:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount of packages</th>
+      <th>Size of packages</th>
+      <th>Time it took to send (in seconds)</th>
+      <th>MBPS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>10.000</td>
+      <td>31</td>
+      <td>0,081316</td>
+      <td>3,812</td>
+    </tr>
+    <tr>
+      <td>10.000</td>
+      <td>5724</td>
+      <td>0,323433</td>
+      <td>176,976</td>
+    </tr>
+    <tr>
+      <td>10.000</td>
+      <td>56691</td>
+      <td>2,208962</td>
+      <td>256,641</td>
+    </tr>
+    <tr>
+      <td>100.000</td>
+      <td>25</td>
+      <td>0,78267</td>
+      <td>3,194</td>
+    </tr>
+    <tr>
+      <td>100.000</td>
+      <td>5685</td>
+      <td>3,89143</td>
+      <td>146,090</td>
+    </tr>
+    <tr>
+      <td>100.000</td>
+      <td>56682</td>
+      <td>23,673988</td>
+      <td>239,427</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here it is made clear that if I want speed, I should use the size of a package to the fullest.</p>
+
+<h4 id="public-package"><strong>Public Package</strong></h4>
+
+<p>Now I tested the sending of packages using a public connection.<br />
+This test is only done once. <br />
+The connection is from and to another building in Breda.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount of packages</th>
+      <th>Size of packages</th>
+      <th>Time it took to send (in seconds)</th>
+      <th>Time it took 1 package with size of 1 byte (in miliseconds)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>100</td>
+      <td>444</td>
+      <td>0,01705</td>
+      <td>0,000402ms</td>
+    </tr>
+    <tr>
+      <td>1000</td>
+      <td>456</td>
+      <td>0,179501</td>
+      <td>0,000393ms</td>
+    </tr>
+    <tr>
+      <td>10.000</td>
+      <td>449</td>
+      <td>1,568</td>
+      <td>0,000374ms</td>
+    </tr>
+    <tr>
+      <td>100.000</td>
+      <td>443</td>
+      <td>17,861</td>
+      <td>0,000393ms</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This time I want to compare the speed of 1 package with 1 byte.
+<br />As seen they are almost all the same speed. This indicates that the amount of packages does not matter on how fast they will be send.</p>
+
+<h2 id="code-profiling">Code Profiling</h2>
+
+<p>Now is the part where we check the code’s performance.</p>
+
+<p>Set-up:</p>
+<ul>
+  <li>I will use Superluminal to profile the code.</li>
+  <li>During this test I send multiple waves of packages to the device or from the device. Then I check how my functions handle this many packages.</li>
+</ul>
+
+<h4 id="storing-messages"><strong>Storing Messages</strong></h4>
+<p>How fast does my engine store messages into the received-messages container?</p>
+
+<p>I am looking in the listen() function. This listens to any message that might comes in.
+<br />When one comes in, it will check this message and store it inside a container.</p>
+
+<div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/1.1.png" alt="SlowListen" width="400" style="margin: 10px 20px 0px 0;" />
+Here I grab a small section where the recvfrom() actually gets data.
+<br />
+There were 2 bottlenecks. The printf function and the pop_back().
+</div>
+<p>Removing messages constantly from a vector at the end is pretty bad for the performance.
+<br />So I figured, why not delete in chunks using memset?</p>
+
+<div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/1.2.png" alt="SlowListen" width="500" style="margin: 0px 20px 50px 0;" />
+    For this test I checked the whole of the test.
+    <br />This means that recvfrom() takes up most of the time.
+    <br />I also deleted the printf() function.
+</div>
+
+<p>Before I could use memset, I needed to preallocate some memory for this vector which I did in the init().
+<br /> But as seen, the removing part now is way faster.
+<br /> But inserting is a lot slower, remember that at this scale it took 700 ms to insert of the 9.4 seconds inside the function.
+<br /><br />
+After a little search, I found out that I could use a deque instead of a vector.
+<br />Thus I changed it.</p>
+
+<p>The result was as following:</p>
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/1.3.png" alt="SlowListen" width="800" style="margin: 0px 20px 0px 0;" />
+</div>
+<p>There was now almost no delay anymore with inserting the messages into the container.
+<br />Very succesful improvement.</p>
+
+<h4 id="receiving-packages"><strong>Receiving Packages</strong></h4>
+
+<p>Now I am looking in the ui.update() function.
+This function is at the part where it checks if it received a start notification.
+<br />It is also where I inserted the test packages.</p>
+
+<p>GetIP() took up a lot of time as did the printf().
+<br />I am interested in the getPackage() function.</p>
+
+<div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/2.1.png" alt="SlowListen" width="400" style="margin: 10px 20px 0px 0;" />
+    <img src="../assets/media/ILO3/2.3.png" alt="SlowListen" width="300" style="margin: 10px 20px 0px 0;" />
+</div>
+
+<p>getPackage() here is around 14% of the function.
+<br />Let us take a look inside</p>
+
+<div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/2.2.png" alt="SlowListen" width="400" style="margin: 10px 20px 0px 0;" />
+    Pretty obvious that the stringstream is a bit slow.
+    <br />I added this to get different words from the string.
+    <br />So why not create a custom function that does this for us and see if it is faster.
+</div>
+
+<p>I did 2 extra tests to check if the performance was better.</p>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/2.4.png" alt="SlowListen" width="300" style="margin: 10px 20px 0px 0;" />
+    <img src="../assets/media/ILO3/2.5.png" alt="SlowListen" width="300" style="margin: 10px 20px 0px 0;" />
+</div>
+
+<div style="display: flex; justify-content: right; align-items: center; gap: 20px; margin: 0 auto;">
+It went from 14% to 8-5 %, a two time increase.
+<br />I also went and removed the printf function:
+    <img src="../assets/media/ILO3/2.6.png" alt="SlowListen" width="200" style="margin: 10px 20px 0px 0;" />
+</div>
+
+<p>Inside the function I noticed something.</p>
+
+<div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/2.7.png" alt="SlowListen" width="500" style="margin: 10px 20px 0px 0;" />
+    While the line of the getWord() function is 51%, the function itself is 13%, this means that the other 36% is from copying the string.
+</div>
+<p>I found out that I could use std::string_stream to just pass part of the string I put into the function, this way I never have create a new string and copy/move it around.</p>
+<div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/2.8.png" alt="SlowListen" width="500" style="margin: 10px 20px 0px 0;" />
+    It went down from 51% to 30.7% with only 2.7% being not from the getWord() function.
+    <br /> Altough I did notice that the function itself became a bit slower. But all together I improved the speed.
+</div>
+
+<h4 id="sending-packages"><strong>Sending Packages</strong></h4>
+
+<p>This part fluctuates a lot depending on how many packages you send and how big they are.
+<br />In these test I send 100.000 packages with size of 75 (ranging between 439 Bytes and 455 bytes mostly)</p>
+
+<div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/3.1.png" alt="SlowListen" width="500" style="margin: 10px 20px 0px 0;" />
+In this case the preparing of the package take 6.6% of the function.
+<br />We can not change the speed whatshoever of the sendto() function.
+</div>
+
+<div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/3.2.png" alt="SlowListen" width="500" style="margin: 10px 20px 0px 0;" />
+It is pretty clear that the strings are the problem here. 
+</div>
+
+<p>I have tried some changes to increase the speed. 
+First I tried using ostringstream.</p>
+
+<div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/3.8.png" alt="SlowListen" width="500" style="margin: 10px 20px 0px 0;" />
+    This made it slower.
+    <br />So, we needed something else.
+</div>
+
+<p>But besides the string problem I added some other improvements.
+<br /> such as pre-defining the size for the loop and take a reference of the package instead of needing to look it up in the array every time.
+<br />These two things made it a little bit faster:</p>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/3.3.png" alt="SlowListen" width="800" style="margin: 10px 20px 0px 0;" />
+</div>
+
+<p>Yet it is still not that fast.
+<br />Thus, I tried something else, this time I thought of using arrays instead of strings. 
+<br />But the problem still relies on the conversion between type to string.
+<br />I tried snprintf() to do this conversion, then I store it inside an array.
+<br />This was the result:</p>
+
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/3.9.png" alt="Preparepackage" width="800" style="margin: 10px 20px 0px 0;" />
+</div>
+<p>About the same speed.
+<br />But using these arrays made it so I was using more memory, thus the best option was to revert back to strings.</p>
+
+<p>I converted the function to return char* instead of strings. 
+This did not make that much of a difference, this because converting from int to char* is very expensive. 
+<br />Here is the snprintf() in question:</p>
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/3.11.png" alt="Preparepackage" width="800" style="margin: 10px 0px 0px 0;" />
+</div>
+<p><br />Result:</p>
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/3.10.png" alt="Preparepackage" width="800" style="margin: 10px 20px 0px 0;" />
+</div>
+
+<p><br /><br />It does seem pretty small, but when I add more bytes to the package the main problem will be the preparing of the package and not the sending:</p>
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 0 auto;">
+    <img src="../assets/media/ILO3/3.7.png" alt="Preparepackage" width="800" style="margin: 10px 20px 0px 0;" />
+</div>
+
+<p>Yet this was the fasted I knew to improve the function.</p>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/BredaUniversityGames/2425-Y2B-PR-230058">2425-Y2B-PR-230058</a> is maintained by <a href="https://github.com/BredaUniversityGames">BredaUniversityGames</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>

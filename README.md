@@ -1,83 +1,95 @@
+---
+layout: default
+title: README
+---
 
-![markdown logo](assets/images/mdp.svg)
+## Introduction to the Learning Log
 
-# markdown-pages.js - _simple Markdown-based static sites, without the generator_
+For this block, **we've put the Learning Log entirely inside GitHub**. The Markdown files in this folder replace the PowerPoint file on Teams that you've had in previous years. 
+Because the LL is now part of your codebase, you can work on it straight from your IDE, and you can easily embed your code into your evidence.
+We hope this will make evidencing more intuitive for programmers. 
 
-Use **markdown-pages.js** to create simple websites using [Markdown](https://www.markdownguide.org/basic-syntax/) files for page content. No site generator necessary - no build process, installs, etc. Client-side JavaScript fetches the Markdown files and handles the conversion to HTML. Content files can be edited directly where they are hosted! Check out the **[GitHub ![GitHub Logo](assets/images/github.png) repository](https://github.com/dandalpiaz/markdown-pages)**!
+> [!IMPORTANT]
+> * **Keep your Learning Log up-to-date throughout the block.** We recommend to sync it with your work at least once per week.
+> * Some ILOs have a hard requirement for weekly updates. Please check the details per ILO.
+> * The Learning Log will be the basis for your 1-on-1s. Use it to prepare for your feedback sessions, and make sure it contains useful conversation points.
+> * The Learning Log will also be the teachers' main resource for grading at the end of the block. Make sure your evidence speaks for itself, without a need to dive into your codebase unguided. 
 
-## Table of Contents
+## Add your personal info!
 
-- [Quick Start](#quick-start)
-- [Markdown Options](#markdown-options)
-- [Deployment](#deployment)
-- [User Styles & Scripts](#user-styles--scripts)
-- [Limitations](#limitations)
+First of all, make sure that the template contains enough of your personal details:
 
-## Quick Start
+1. In [index.md](index.md), fill in your student name & number and add a picture of yourself. This info will show up on the index page of the website that you'll generate from the Learning Log. (See below for instructions on how to do that.)
+2. In [_config.yml](_config.yml), fill in your student name & number. This will display them in the header of each page of the generated website.
 
-To use the library, simply add the JavaScript file in the `<head>` section of your `index.html` file and create empty `<header>`, `<main>`, and `<footer>` elements.
+## Sections
 
+The index page should contain your personal info, as well as your end-of-block reflection and self-assessment.
+
+Next to this, there is a separate Markdown file per ILO. 
+Each ILO file starts with the ILO's overall description, suggested evidence, and detailed rubric. Please do not remove or alter this first part of the files.
+
+Some ILO files already contain some evidence structure that you need to follow. Please do not change this structure.
+For other ILO files, the evidence section has no prescribed structure and can be filled in however you want.
+
+## Markdown cheatsheet
+
+For a quick overview of how to use Markdown, have a look at the small [cheatsheet](cheatsheet.md) we've prepared!
+
+## What should you include as evidence?
+
+Here's what you should consider incorporating as evidence in your ILO pages:
+
+- **Multimedia**: Add videos, screenshots, diagrams wherever they add value. Visual representation can often convey more than words. Warning: videos can become large files very quickly, so use them wisely (not too long, reasonable resolution, proper compression, etc). Also, *don't put videos on YouTube*, but include them proper way (see our Markdown cheatsheet). Officially, we cannot accept videos on external websites as evidence.
+- **Link to Code**: You can provide links to specific lines of your code (see cheatsheet). 
+- **Code Snippets**: Uou can easily provide code snippets using Markdown (see cheatsheet).
+- **GitHub Issues**: If you choose to use GitHub issues to plan out your tasks, you code create screenshots of them and embed them here as images.
+- **External Documentation / AI Tools**: If your work is based on external articles, papers, codebases, or other resources, refer to them with the appropriate names and URLs. The same goes for any tools that you have used, including AI tools like ChatGPT.
+- **Feedback Summaries**: Feedback, whether from peers or instructors, is a valuable part of learning. Summarize and reflect on the feedback received to show your responsive actions and learning.
+
+## Website instructions
+This GitHub repo has been set up so that it can easily generate a nice-looking website out of your Learning Log Markdown files. 
+The easiest way to trigger this is to **publish a release**. You should do this at least once, at the end of the block.
+
+1. On the main page of your repo, click "Create a new release".
+![Step 1](assets/media/github-page-instructions-1.png)
+
+2. Give it a tag and description, and click "Publish release".
+![Step 2](assets/media/github-page-instructions-2.png)
+
+3. This will trigger a GitHub action that builds and deploys the website. You can see the progress under "Actions". The top item in the list there is your most recently triggered action. Click on it to see more info.
+![Step 3](assets/media/github-page-instructions-3.png)
+
+4. If the action has suceeded, its "Summary" page should look something like this. Copy the (auto-generated) URL to your clipboard. This is the URL that you should also mention in the Brightspace comment box when you hand in your final assignment.
+![Step 4](assets/media/github-page-instructions-4.png)
+
+Before submitting your assignment, make sure to test if all your videos etc show up correctly on this website!
+
+## Build the LL website locally
+
+We recommend to also generate the Learning Log website locally on a regular basis.
+On Windows, this can be done as follows:
+
+1. Install Ruby
+    1. Download and install **Ruby+Devkit** from [RubyInstaller for Windows](https://rubyinstaller.org/). You'll see versions like `Ruby+Devkit 2.7.X (x64)`. Choose a version based on your Windows (64-bit or 32-bit). Most modern systems will use 64-bit.
+
+    2. During the installation:
+        - Use the default options.
+        - Ensure the "Add Ruby executables to your PATH" option is checked.
+        - Once the installation is finished, you'll be prompted to install MSYS2 development toolchain. Go ahead and let it install as it's required for Jekyll and some Ruby gems.
+
+2. Navigate to your repository `evidence` directory and open the terminal/command prompt 
+3. Install Bundler and Jekyll
+```bash
+gem install jekyll bundler
 ```
-<!doctype html>
-<html lang="en">
-<head>
-  <!-- load main JS file -->
-  <script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.1/markdown-pages.min.js"></script>
-
-  <!-- load optional user styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.1/assets/user-styles.min.css">
-</head>
-<body>
-	<header></header>
-	<main></main>
-	<footer></footer>
-
-	<!-- load optional user scripts -->
-	<script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.1/assets/user-scripts.min.js"></script>
-</body>
-</html>
+4. Install Dependencies:
+```bash
+bundle install
+```
+5. Build and Run the Jekyll Site
+```bash
+bundle exec jekyll serve
 ```
 
-Start from a fork of [markdown-pages.js](https://github.com/dandalpiaz/markdown-pages), or, use the CDN link like the snippet above. The library will use the `README.md` file for the homepage content. Optionally, a `header.md` and `footer.md` file can be created to populate those sections. All other pages should be stored in a `pages` directory. For example, a file at `pages/sample-page.md` can be linked to as follows:
-
-```
-Check out the [sample page](?page=sample-page)
-```
-
-**Check out the [sample page](?page=sample-page)** (link will work on the rendered site, not github.com).
-
-_Note: if you need to use HTML elements that don't have a Markdown equivalent, you can simply add the HTML in the Markdown file. It will be ignored by the converter and kept as-is._
-
-## Markdown Options
-
-The library uses the [Showdown JS](https://showdownjs.com/) converter which provides some extra options for how the Markdown content will be converted. The following [Showdown options](https://showdownjs.com/docs/available-options/) are active for this library:
-
-```
-conv.setOption('tables', 'true');
-conv.setOption('emoji', 'true');
-conv.setOption('ghCompatibleHeaderId', 'true');
-conv.setOption('simpleLineBreaks', 'true');
-conv.setOption('strikethrough', 'true');
-conv.setOption('tasklists', 'true');
-conv.setOption('parseImgDimensions', 'true');
-```
-
-## Deployment
-
-The library can be used anywhere that web files are hosted - a traditional server, an object storage bucket like AWS s3, etc. Part of the aim of this project was to avoid the dependency of a static site generator, but [GitHub Pages](https://docs.github.com/en/pages/quickstart) remains a convenient option to host static files. [Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/) also offers no-cost static file hosting.
-
-## User Styles & Scripts
-
-The example site includes styles from the [Pico CSS](https://picocss.com/) framework and some custom styles via a `user-styles.css` file. This and [other classless CSS frameworks](https://dohliam.github.io/dropin-minimal-css/) work well with Markdown content. The example site also includes a dark/light mode toggle and code syntax highlighting via a `user-scripts.js` file.
-
-## Limitations
-
-- **URL Structure** - since all work is done on the client side with the `index.html` file, a nested URL structure (e.g. /directory1/directory2/page) is not possible. Instead pages are referenced by a query parameter (/?page=file-name).
-- **Local Development** - since the site uses XMLHttpRequest to grab content, a local web server will be needed if you want to test things locally, e.g. `python -m http.server`. However, editing hosted files directly is part of the convenience/fun. 
-- **Custom layouts** - Markdown used in this way is fairly linear, so custom layouts won't be possible without adding additional HTML in the pages.
-
-## Todo
-
-- Add YAML front matter to pages and parse with [gray-matter](https://github.com/jonschlinkert/gray-matter/tree/master) (added via CDN) to give options for things like choosing a layout template for each page.
-- Parse layouts for file includes, e.g. `{% include 'filename' %}` so that resuable sections can be defined.
-- Test with [Decap CMS](https://decapcms.org/)
+Now, you should be able to access the site locally at [http://localhost:4000](http://localhost:4000).

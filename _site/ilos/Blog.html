@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#FFA500">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/assets/css/style.css?v=4e30be087695ccfd071aca173087253490e4700a">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    
+    <header class="page-header" role="banner">
+      <h1 style="color: white;" class="project-name">🕹️ How I created a small networking library for windows</h1>
+      <h2 style="color: white;">
+        <a class="author" href="mailto: 230058.buas.nl">Finn Thiesen</a>
+      </h2>
+      <h2 style="color: white;">230058</h2>
+      <a href="/" class="btn"> 🏠 </a>
+
+      
+        <a href="/ilos/Blog.html" class="btn"> Blog Post</a>
+      
+        <a href="/ilos/ILO1.html" class="btn"> 🗺️ ILO 1</a>
+      
+        <a href="/ilos/ILO2.html" class="btn"> 🔬 ILO 2</a>
+      
+        <a href="/ilos/ILO3.html" class="btn"> ⏱️ ILO 3</a>
+      
+        <a href="/ilos/ILO4.html" class="btn"> 🦾 ILO 4</a>
+      
+        <a href="/ilos/ILO5.html" class="btn"> 🎁 ILO 5</a>
+      
+      
+      <a href="/retake.html" class="btn">🔁 Retake</a>
+    </header>
+
+    <div class="site-name">
+      <a href="/" title="Return to the homepage">🐝 2024-2025 Y2A PR - Learning Log</a>
+    </div>
+
+    <main id="content" class="main-content" role="main">
+      <h2 id="introduction">Introduction</h2>
+<p><strong>How would one message another person that is on the other side of the world?</strong>
+<br />You simple send them a message via whatsapp, or send them an email.
+<br /> <br />
+It sounds very simple, but what is happening on the inside?<br />
+How would I connect with other people in for example a game?<br />
+How do you program networking?</p>
+
+<p>I wrote a simple networking library for windows.
+<br />This library connects with other users using hole punching.
+<br />I will write about how and what in this blog.</p>
+
+<h2 id="what-is-networking">What is networking?</h2>
+
+<p>Explain the basics of networking</p>
+
+<p>Networking is connecting with others to exchange information, this is essentially the same case for programming, but here we are talking about devices.</p>
+
+<p>Networking in programming is controlling the behaviour and traffic of network devices by software that is not part of the network hardware. With that, the user is able to steer the network to their likings to a certain extend.</p>
+
+<p>In my case it is connecting with other devices using low-level network programming.</p>
+
+<p>When connected with other devices, you can send packages which contain information through the internet that the other device will pick up.</p>
+
+<h2 id="different-ways-to-connect">Different ways to connect</h2>
+
+<p>Holepunching, port forwarding, Central server(directly connect).</p>
+
+<p>You can not directly connect to any device on any location. The connection is secured by a firewall and NAT. Both NAT and firewall could block connections from the outside.<br />
+The NAT did not always exist, since people realized we did not have enough IPV4 adresses. They invented the NAT to reduce the amount of total public IP adresses.
+The NAT simple translate the private IP of a local device to the public IP that is assigned to the router.</p>
+
+<p>So, we need ways to connect through the NAT and firewall. There are some ways to do that.</p>
+
+<h3 id="using-a-central-server">Using a central server</h3>
+
+<p>All devices connect to a central server. This server is not behind a NAT or firewall thus everyone is able to connect. 
+This server can do multiple things:</p>
+<ul>
+  <li>It can only serve as a bridge between 2 devices wanting to connect. Thus if person A wants to contact person B, they send a message to the server, this will send the message to person B, often called a Relay Server.</li>
+  <li>It can handle the connections, the devices will send their inputs and information to the server, whereas the server will do the calculations and return for example player positions or game states. Thus meaning it is more involved in the process.</li>
+</ul>
+
+<h3 id="port-forwarding">Port Forwarding</h3>
+
+<h2 id="winsock2">Winsock2</h2>
+
+<p>Explain code stuff, like; socket, bind(), send() recvfrom().</p>
+
+<h2 id="my-library">My library</h2>
+
+<p>How did I implement stuff + packages</p>
+
+<h2 id="issues-and-downsides">Issues and downsides</h2>
+
+<p>Things my library does not do.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>^^</p>
+
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/BredaUniversityGames/2425-Y2B-PR-230058">2425-Y2B-PR-230058</a> is maintained by <a href="https://github.com/BredaUniversityGames">BredaUniversityGames</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  </body>
+</html>
