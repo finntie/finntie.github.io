@@ -1,1 +1,1 @@
-[markdown-pages.js](.)
+[markdown-pages.js](?page=test-page) Does this work?
