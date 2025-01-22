@@ -19,8 +19,6 @@ In this blog I will help you understand networking and how I created a small lib
 
 ## What is networking?
 
-Explain the basics of networking
-
 Networking is connecting with others to exchange information, this is essentially the same case for programming, but here we are talking about devices.
 
 Networking in programming is controlling the behaviour and traffic of network devices by software that is not part of the network hardware. With that, the user is able to steer the network to their likings to a certain extend.
@@ -30,8 +28,6 @@ In my case it is connecting with other devices using low-level network programmi
 When connected with other devices, you can send packages which contain information through the internet that the other device will pick up.
 
 ## Different ways to connect
-
-Holepunching, port forwarding, Central server(directly connect).
 
 You can not directly connect to any device on any location. The connection is secured by a firewall and NAT. Both NAT and firewall could block connections from the outside.<br>
 The NAT did not always exist, since people realized we did not have enough IPV4 adresses. They invented the NAT to reduce the amount of total public IP adresses.
@@ -61,8 +57,6 @@ This however would not always work. Especially not with a NAT type called a symm
 There are different ways to connect with also different situations that I did not explain here. 
 
 ## Winsock2
-
-Explain code stuff, like; socket, bind(), send() recvfrom().
 
 Winsock2 is an API for networking on windows specifically, it is based on BSD (Berkeley Software Distribution) Socket standard but differs slightly from it, BSD socket can be used on for example Linux.
 
@@ -147,8 +141,6 @@ The receiving function blocks at default, meaning it will wait until it receives
 When using a TCP protocol, you can not just send the messages. You have to establish a connection beforehand. I won't go into details of this since I used mainly UDP.
 
 ## My library
-
-How did I implement stuff + packages 
 
 Using winsock2 I created a library which makes it easier to connect with other people and send messages.
 
@@ -353,8 +345,6 @@ void setIPV(int IPV, bool ForceIPV4)
 The <font color="#962f2f">KeepAlive</font>() function is necessary to be called from the host if hole punching is done. The connection needs to be updated at least every 60 seconds (which the function does). This could be replaced by an own made function which sends a package after a certain time.
 
 ## Issues, downsides and potential improvements
-
-Things my library does not do.
 
 Due to the time contraint I had, there are still some things not integrated into the library which could cause issues. 
 
