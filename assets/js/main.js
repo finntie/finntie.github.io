@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const darkmodeButton = document.getElementById('darkmodeButton');
 
     darkmodeButton.addEventListener('click', () => {
+        //---------------------------------------Text colors---------------------------------------------------
         const body = document.body;
         const currentBackgroundColor = body.style.backgroundColor;
         const currentTextColor = body.style.color;
   
-
         const codeElements = document.querySelectorAll('.main-content code, .main-content pre');
         const headers = document.querySelectorAll('.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6');
         //Change colours of normal text and background
@@ -28,6 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
             code.style.color = currentCodeColor === 'rgb(165, 197, 211)' ? 'rgb(86, 116, 131)' : 'rgb(165, 197, 211)'; // Check RGB values
             code.style.backgroundColor = currentCodeBackground === 'rgb(65, 77, 91)' ? 'rgb(243, 246, 251)' : 'rgb(65, 77, 91)'; // Check RGB values
         });
+
+        //------------------------------------------Button Name---------------------------------
+            // Change the button text
+        if (darkModeButton.textContent === 'DarkMode') {
+            darkModeButton.textContent = 'LightMode';
+        } else {
+            darkModeButton.textContent = 'DarkMode';
+        }
     });
     } else {
     console.error("Button with id 'fontColorButton' not found in the DOM.");
