@@ -2,8 +2,8 @@
 ---
 
 $header-heading-color: #000;
-$header-bg-color: #ee7623;
-$header-bg-color-secondary: #ee7623;
+$header-bg-color: #31477e;
+$header-bg-color-secondary: #24aba2;
 $section-headings-color: #000;
 $header-link-color: #ffffff;
 
@@ -73,4 +73,22 @@ $header-link-color: #ffffff;
   &:hover {
     text-decoration: underline;
   }
+}
+
+.top-right {
+  position: fixed;
+  top: 10px; /* Distance from the top */
+  right: 10px; /* Distance from the right */
+  z-index: 10; /* Ensure it stays on top */
+  background-color: #2f2f2f; /* Button background color */
+  color: white; /* Button text color */
+  font-size: 16px; /* Text size */
+  padding: 10px 20px; /* Padding around the text (top/bottom, left/right) */
+  border-radius: 5px; /* Rounded corners */
+  border: none; /* Remove default button border */
+  cursor: pointer; /* Change cursor to pointer when hovering */
+}
+.top-right:hover {
+  color: rgb(61, 61, 61); /* Change button text color when hoveringe */
+  background-color: #9c9c9c81; /* Change background color when hovering */
 }

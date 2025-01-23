@@ -269,7 +269,7 @@ a:hover { text-decoration: underline; }
 @media screen and (max-width: 42em) { .btn { display: block; width: 100%; padding: 0.75rem; font-size: 0.9rem; }
   .btn + .btn { margin-top: 1rem; margin-left: 0; } }
 
-.page-header { color: #000; text-align: center; background-color: #ee7623; background-image: linear-gradient(120deg, #ee7623, #ee7623); }
+.page-header { color: #000; text-align: center; background-color: #31477e; background-image: linear-gradient(120deg, #24aba2, #31477e); }
 @media screen and (min-width: 64em) { .page-header { padding: 5rem 6rem; } }
 @media screen and (min-width: 42em) and (max-width: 64em) { .page-header { padding: 3rem 4rem; } }
 @media screen and (max-width: 42em) { .page-header { padding: 2rem 1rem; } }
@@ -336,3 +336,7 @@ a:hover { text-decoration: underline; }
 
 .author { color: #ffffff; text-decoration: none; }
 .author:hover { text-decoration: underline; }
+
+.top-right { position: fixed; top: 10px; /* Distance from the top */ right: 10px; /* Distance from the right */ z-index: 10; /* Ensure it stays on top */ background-color: #2f2f2f; /* Button background color */ color: white; /* Button text color */ font-size: 16px; /* Text size */ padding: 10px 20px; /* Padding around the text (top/bottom, left/right) */ border-radius: 5px; /* Rounded corners */ border: none; /* Remove default button border */ cursor: pointer; /* Change cursor to pointer when hovering */ }
+
+.top-right:hover { color: #3d3d3d; /* Change button text color when hoveringe */ background-color: #9c9c9c81; /* Change background color when hovering */ }

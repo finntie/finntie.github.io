@@ -8,6 +8,7 @@
     <meta name="theme-color" content="#85b5cc">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script> 
     {% include head-custom.html %}
   </head>
   <body>
@@ -25,6 +26,9 @@
       {% endfor %}
     </header>
 
+    <button id="darkmodeButton" class="btn top-right">DarkMode</button>
+
+    
     <div class="site-name">
       <a href="/" title="Return to the homepage">{{ site.title }}</a>
     </div>
