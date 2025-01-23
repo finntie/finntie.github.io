@@ -82,9 +82,9 @@ Now, winsock2 has a lot of different networking functions, I will explain some t
 <br>
 ```cpp
 INT WSAAPI getaddrinfo([in, optional] PCSTR           pNodeName,
-                        [in, optional] PCSTR           pServiceName,
-                        [in, optional] const ADDRINFOA *pHints,
-                        [out]          PADDRINFOA      *ppResult
+                       [in, optional] PCSTR           pServiceName,
+                       [in, optional] const ADDRINFOA *pHints,
+                       [out]          PADDRINFOA      *ppResult
 );
 ```
 You use **getaddrinfo()** to store information of an IP in a addrinfo struct (*ppResult). 
@@ -262,22 +262,41 @@ Every number is a different connection, this is decided by the host. Therefor, i
 **Receiving Packages**
 
 ```cpp
-T getPackage(std::string PackageName, int VariableIndex, bool DeleteMessage, bool* succeeded);
+void getPackage(std::string PackageName, bool DeleteMessage, ReturnPackageInfo* packageInfo)
 ```
 - To get a package, you specify the name of the package.
-- You state which variable of the package you want (starts at 0).
 - State if you want to destroy message after reading it.
-- And add a bool which will set to true if the package was succesfully read and a value returned.
+- You need to create a <font color="#439c58">ReturnPackageInfo</font> struct that will be filled by the function.
 
-You also need to specify what type you want to get.<br>
+```cpp
+    struct ReturnPackageInfo
+    {
+        bool succeeded = false;
+        std::vector<std::variant<int, float, unsigned, const char*, std::string, double, bool>> VariableVector;
+        template <typename T>
+        T getVariable(int Index)
+        {
+            if (auto* value = std::get_if<T>(VariableVector[Index]))
+                return *value;
+            else 
+            {
+                printf("Error getVariable(): Wrong type\n");
+                return T{};
+            }
+        }
+    };
+```
+The struct includes a bool to see if the package succesfully was received.
+<br>It includes a vector of variants, this includes every variable you put in.
+<br>Using the <font color="#962f2f">getVariable</font>() function, can can safely return any variable. Of course this can also be done using a normal std::<font color="#962f2f">get</font>(), but this could create an error.
+
 Example:
 ```cpp
-bool success = false;
-std::string timeDate = DanceObj.getPackage<std::string>("TimeAndDate", 0, true, &success);
-//We need to check if the return value was succesful. 
-if (success)
+Dance::ReturnPackageInfo PI;
+DanceObj.getPackage("TimeAndDate", true, &PI);
+if (PI.succeeded)
 {
-    printf(timeDate.c_str());
+    printf(PI.getVariable<std::string>(0).c_str());
 }
 ```
 Now we have handled everything, except the callback functions.

@@ -2,6 +2,6 @@ theme: jekyll-theme-cayman
 collections:
   ilos:
     output: true
-title: "Website Finn Thiesen"
+title: "Finntie"
 description: My own site for programming
 
