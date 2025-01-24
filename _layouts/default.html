@@ -21,14 +21,16 @@
       <h2 style="color: white;">{{ site.student.number }}</h2>
       <a href="/" class="btn"> 🏠 </a>
 
-      {% for ilo in site.ilos %}
-        <a href="{{ ilo.url }}" class="btn"> {{ ilo.preview_title }}</a>
+      {% for page in site.pages %}
+        {% unless page.path contains "Blogs/" %}
+          <a href="{{ page.url }}" class="btn"> {{ page.preview_title }}</a>
+        {% endunless %}
       {% endfor %}
     </header>
 
     <button id="darkmodeButton" class="btn top-right">DarkMode</button>
 
-    
+
     <div class="site-name">
       <a href="/" title="Return to the homepage">{{ site.title }}</a>
     </div>

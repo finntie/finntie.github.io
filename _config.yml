@@ -3,8 +3,7 @@ include:
 
 theme: jekyll-theme-cayman
 collections:
-  ilos:
+  pages:
     output: true
 title: "Finntie"
 description: My own site for programming
-

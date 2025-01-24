@@ -4,13 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (darkmodeButton) {
 
     const darkmodeButton = document.getElementById('darkmodeButton');
+    const logoImage = document.getElementById('BuasLogo');
 
     darkmodeButton.addEventListener('click', () => {
         //---------------------------------------Text colors---------------------------------------------------
         const body = document.body;
         const currentBackgroundColor = body.style.backgroundColor;
         const currentTextColor = body.style.color;
-  
+        
+        
         const codeElements = document.querySelectorAll('.main-content code, .main-content pre');
         const headers = document.querySelectorAll('.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6');
         //Change colours of normal text and background
@@ -31,10 +33,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //------------------------------------------Button Name---------------------------------
             // Change the button text
-        if (darkModeButton.textContent === 'DarkMode') {
-            darkModeButton.textContent = 'LightMode';
+        if (darkmodeButton.textContent === 'DarkMode') {
+            darkmodeButton.textContent = 'LightMode';
         } else {
-            darkModeButton.textContent = 'DarkMode';
+            darkmodeButton.textContent = 'DarkMode';
+        }
+
+        //------------------------------------------Image-----------------------------------
+        const currentLogo = logoImage.src;
+        if (currentLogo.includes("LogoBUas_Black.png")){
+            logoImage.src = '/assets/media/LogoBUas_RGB.png';
+        }else{
+            logoImage.src = '/assets/media/LogoBUas_Black.png';
         }
     });
     } else {
