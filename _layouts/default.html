@@ -22,7 +22,7 @@
       <a href="/" class="btn"> 🏠 </a>
 
       {% for page in site.pages %}
-        {% unless page.path contains "Blogs/" %}
+        {% unless page.path contains "Blogs/" or page.path contains "Projects/" %}
           <a href="{{ page.url }}" class="btn"> {{ page.preview_title }}</a>
         {% endunless %}
       {% endfor %}

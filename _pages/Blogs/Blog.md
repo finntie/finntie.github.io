@@ -73,7 +73,7 @@ Sockets serves as endpoints in sending and receiving data. A socket uses a socke
 A **Port number** is a 16-bit unsigned integer. It is used to identify a specific endpoint. <br>
 Ports ranging between 0 and 1024 are well-known ports or system ports, these are mostly reserved/assigned by the IANA (Internet Assigned Numbers Authority).
 
-The two most famouse **Protocols** are TCP and UDP. <br>
+The two most famous **Protocols** are TCP and UDP. <br>
 TCP is known for sending messages safely across the network.
 On the other hand, UDP is all about speed. You do not need a connection for sending a UDP packages. But speed means they not always arrive correctly or at all.<br>
 For certain scenarios you use TCP (for example sending chat messages) for others you use UDP (for example a video connection).

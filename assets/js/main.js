@@ -51,3 +51,24 @@ document.addEventListener('DOMContentLoaded', () => {
     console.error("Button with id 'fontColorButton' not found in the DOM.");
     }
 });
+
+
+//Video play on hover
+document.addEventListener('DOMContentLoaded', function(){
+    const buttons = document.querySelectorAll('.page-info-button');
+
+    buttons.forEach(button => {
+        const video = button.querySelector('video');
+        if (video) {
+            video.addEventListener('mouseenter', function() {
+                video.play().catch(error => {
+                console.log('Play interrupted:', error);
+        });
+            });
+            video.addEventListener('mouseleave', function() {
+                video.pause();
+                video.currentTime = 0; // Reset to beginning
+            });
+        }
+    });
+});
