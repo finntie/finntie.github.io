@@ -326,6 +326,8 @@ a:hover { text-decoration: underline; }
 
 .site-name a { text-decoration: none; color: white; }
 
+.page-header { padding: 20px 0; }
+
 .btn { display: inline-block; margin-bottom: 1rem; color: white; background-color: rgba(0, 0, 0, 0.08); border-color: rgba(0, 0, 0, 0.2); border-style: solid; border-width: 1px; border-radius: 0.3rem; transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
 .btn:hover { color: white; text-decoration: none; background-color: rgba(0, 0, 0, 0.2); border-color: rgba(0, 0, 0, 0.3); }
 .btn + .btn { margin-left: 1rem; }
@@ -341,19 +343,20 @@ a:hover { text-decoration: underline; }
 
 .site-footer { width: 100%; margin-top: 20px; }
 
-.top-right { position: fixed; top: 10px; /* Distance from the top */ right: 10px; /* Distance from the right */ z-index: 10; /* Ensure it stays on top */ background-color: #2f2f2f; /* Button background color */ color: white; /* Button text color */ font-size: 16px; /* Text size */ padding: 10px 20px; /* Padding around the text (top/bottom, left/right) */ border-radius: 5px; /* Rounded corners */ border: none; /* Remove default button border */ cursor: pointer; /* Change cursor to pointer when hovering */ }
+.top-right { position: sticky; top: 20px; float: right; margin-top: 20px; margin-right: 20px; margin-left: 20px; z-index: 10; /* Ensure it stays on top */ background-color: #2f2f2f; /* Button background color */ color: white; /* Button text color */ font-size: 16px; /* Text size */ padding: 10px 20px; /* Padding around the text (top/bottom, left/right) */ border-radius: 5px; /* Rounded corners */ border: none; /* Remove default button border */ cursor: pointer; /* Change cursor to pointer when hovering */ }
 
 .top-right:hover { color: #3d3d3d; /* Change button text color when hoveringe */ background-color: #9c9c9c81; /* Change background color when hovering */ }
 
-.buas-logo { position: absolute; top: 1; left: 64px; background-color: rgba(255, 255, 255, 0); width: 300px; }
+.buas-logo { float: left; margin-left: calc(-1 * (50vw - 50%)); margin-right: 20px; margin-bottom: 10px; background-color: rgba(255, 255, 255, 0); width: 300px; }
 
-.page-button { display: flex; flex-direction: column; align-items: center; background-color: rgba(163, 197, 198, 0.507); border: transparent; border-radius: 5px 5px 10px 10px; padding: 5px; cursor: pointer; text-align: center; width: 320px; }
+@media (max-width: 768px) { .buas-logo { float: right; margin-left: 20px; margin-right: calc(1 * (50vw - 50%)); width: 150px; } }
+.page-button { display: flex; flex-direction: column; align-items: center; background-color: rgba(163, 197, 198, 0.507); border: transparent; border-radius: 5px 5px 10px 10px; padding: 5px; cursor: pointer; text-align: center; width: 320px; transition: transform 0.3s ease-in-out; }
 .page-button img video { width: 300px; height: 300px; border: 1px solid black; border-radius: 5px; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ }
 .page-button span { margin-top: 10px; font-size: 16px; color: black; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ padding: 7px; }
-.page-button:hover img { transform: scale(1.07); }
-.page-button:hover span { transform: scale(0.93); }
+.page-button:hover { text-decoration: none; transform: scale(1.1); }
+.page-button:hover span { transform: scale(1.05); }
 
-.page-info-button { display: flex; flex-direction: column; align-items: center; background-color: rgba(205, 98, 36, 0.507); border: transparent; border-radius: 5px 5px 10px 10px; padding: 5px; cursor: pointer; text-align: center; width: 320px; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ /* Set color based on type */ }
+.page-info-button { display: flex; flex-direction: column; align-items: center; background-color: rgba(205, 98, 36, 0.507); border: transparent; border-radius: 5px 5px 10px 10px; padding: 5px; cursor: pointer; text-align: center; width: 320px; transition: transform 0.3s ease-in-out; /* Set color based on type */ }
 .page-info-button[data-type="School - Solo"] { background-color: rgba(47, 179, 184, 0.507); }
 .page-info-button[data-type="School - Team"] { background-color: rgba(254, 210, 64, 0.507); }
 .page-info-button[data-type="Self-Study - Solo"] { background-color: rgba(196, 95, 137, 0.507); }

@@ -22,6 +22,11 @@ $header-link-color: #ffffff;
   color: white;  
 }
 
+.page-header {
+ padding: 20px 0;
+
+}
+
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
@@ -89,9 +94,12 @@ $header-link-color: #ffffff;
 }
 
 .top-right {
-  position: fixed;
-  top: 10px; /* Distance from the top */
-  right: 10px; /* Distance from the right */
+  position:sticky;
+    top: 20px; // Required for sticky positioning
+  float: right; // Pushes button to the right
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
   z-index: 10; /* Ensure it stays on top */
   background-color: #2f2f2f; /* Button background color */
   color: white; /* Button text color */
@@ -107,11 +115,21 @@ $header-link-color: #ffffff;
 }
 
 .buas-logo{
-  position: absolute;
-  top: 1;
-  left: 64px;
-  background-color: rgba(255, 255, 255, 0); 
+  float: left;
+  margin-left: calc(-1 * (50vw - 50%));
+  margin-right: 20px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0);
   width: 300px;
+}
+
+@media (max-width: 768px) {
+  .buas-logo{
+    float: right;
+    margin-left: 20px; 
+    margin-right: calc(1 * (50vw - 50%));
+    width: 150px;
+  }
 }
 
 .page-button {
@@ -125,6 +143,7 @@ $header-link-color: #ffffff;
   cursor: pointer; 
   text-align: center;
   width: 320px;
+  transition: transform 0.3s ease-in-out;
 
   img video {
     width: 300px;
@@ -143,11 +162,10 @@ $header-link-color: #ffffff;
   }
 
   &:hover{
-    img{
-      transform: scale(1.07);
-    }
+    text-decoration: none;
+      transform: scale(1.10);
     span{
-      transform: scale(0.93);
+      transform: scale(1.05);
     }
   }
 }
@@ -163,7 +181,7 @@ $header-link-color: #ffffff;
   cursor: pointer; 
   text-align: center;
   width: 320px;
-  transition: transform 0.3s ease-in-out; /* Smooth scaling transition */
+  transition: transform 0.3s ease-in-out;
 
   /* Set color based on type */
   &[data-type="School - Solo"]{

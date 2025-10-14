@@ -22,7 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         headers.forEach(header =>   {
             header.style.color = body.style.color;
         });
-        //Alll code
+        //All code
+        if (codeElements.length > 0) {
         const computedStyle = window.getComputedStyle(codeElements[0]);
         const currentCodeColor = computedStyle.color; // Text color
         const currentCodeBackground = computedStyle.backgroundColor; // Background color
@@ -30,10 +31,11 @@ document.addEventListener('DOMContentLoaded', () => {
             code.style.color = currentCodeColor === 'rgb(165, 197, 211)' ? 'rgb(86, 116, 131)' : 'rgb(165, 197, 211)'; // Check RGB values
             code.style.backgroundColor = currentCodeBackground === 'rgb(65, 77, 91)' ? 'rgb(243, 246, 251)' : 'rgb(65, 77, 91)'; // Check RGB values
         });
+        }
 
         //------------------------------------------Button Name---------------------------------
             // Change the button text
-        if (darkmodeButton.textContent === 'DarkMode') {
+        if (darkmodeButton.textContent == 'DarkMode') {
             darkmodeButton.textContent = 'LightMode';
         } else {
             darkmodeButton.textContent = 'DarkMode';
