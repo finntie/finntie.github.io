@@ -145,7 +145,7 @@ $header-link-color: #ffffff;
   width: 320px;
   transition: transform 0.3s ease-in-out;
 
-  img video {
+  img, video {
     width: 300px;
     height: 300px;
     border: 1px solid black;
@@ -206,19 +206,12 @@ $header-link-color: #ffffff;
     padding: 7px;
   }
 
-  video {
+  img, video {
     width: 300px;
     height: 300px;
     border: 1px solid black;
     border-radius: 5px;
     object-fit: cover;
-  }
-
-  img {
-    width: 300px;
-    height: 300px;
-    border: 1px solid black;
-    border-radius: 5px;
   }
 
   .type{
