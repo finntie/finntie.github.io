@@ -14,32 +14,31 @@
   <body>
     
     <header class="page-header" role="banner">
-      <h1 style="color: white;" class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 style="color: white;">
-        <a class="author" href="mailto: {{ site.student.number }}.buas.nl">{{ site.student.name }}</a>
-      </h2>
+      <div class="site-name">
+      <a href="/" title="Return to the homepage">{{ site.title }}</a>
+      </div>  
+          
       <h2 style="color: white;">{{ site.student.number }}</h2>
-      <a href="/" class="btn"> 🏠 </a>
-
-      {% for page in site.pages %}
-        {% unless page.path contains "Blogs/" or page.path contains "Projects/" %}
-          <a href="{{ page.url }}" class="btn"> {{ page.preview_title }}</a>
+      <a href="/" 
+      class="btn {% if page.section == "Home" %}active{% endif %}" 
+      data-icon="🏠" 
+      data-hover="Home Page""> </a>
+      
+      {% for nav_page in site.pages %}
+        {% unless nav_page.path contains "Blogs/" or nav_page.path contains "Projects/" %}
+          <a href="{{ nav_page.url }}" 
+             class="btn {% if page.section == nav_page.section %}active{% endif %}" 
+             data-icon="{{ nav_page.icon }}" 
+             data-hover="{{ nav_page.preview_title }}">
+          </a>        
         {% endunless %}
       {% endfor %}
     </header>
-
-
-
-    <div class="site-name">
-      <a href="/" title="Return to the homepage">{{ site.title }}</a>
-    </div>
     
     <button id="darkmodeButton" class="btn top-right">DarkMode</button>
 
     <main id="content" class="main-content" role="main">
       {{ content }}
-
-
       <footer class="site-footer">
         {% if site.github.is_project_page %}
           <span class="site-footer-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</span>

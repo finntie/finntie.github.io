@@ -1,8 +1,12 @@
 ---
-title: "My Resume"
+title: "My_Resume"
 preview_title: "Resume"
+section: Projects
+icon: 📋
 layout: buttonpage
 ---
+
+<body class="{{ page.title }}">
 
 <a href="Projects/Networking.html" class="page-info-button" data-type="Self-Study - Solo">
     <video>

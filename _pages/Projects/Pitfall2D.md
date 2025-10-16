@@ -1,6 +1,7 @@
 ---
 title: "Pitfall 2D"
 preview_title: "Pitfall 2D"
+section: "Projects"
 layout: default
 ---
 
@@ -66,14 +67,9 @@ Next up is the **rewind** feature. This was pretty easy, I just filled an array 
 Every 1 second I would fill 25 positions. When at the last index, I set it back to 0. <br>
 When needing to rewind, I would start at the last position I added, and do a full loop. 
 
-<div style="float: right; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
-<img src="/assets/media/Pitfall2D/Pixel-Perfect.gif" width="250" style="margin: -10px 20px 0px 0;">
-</div>
 Finally I added **pixel perfect** collision for certain items like the balloons and coins. <br>
 I could overlap 2 different images and check each pixel, if it was a black pixel, it was empty. <br>
 When 2 non-empty pixels overlapped, it was a hit. <br>
-In this video I walk in front of a balloon and a coin, the collision is drawn 30 pixels to the right 
-showing the shape of the overlap.
 
 ### Conclusion
 I had fun creating a little game and adding my own touch to it. <br>

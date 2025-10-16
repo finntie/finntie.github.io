@@ -1,6 +1,8 @@
 ---
 title: "All posted blogs"
 preview_title: "Blog Posts"
+icon: ✍️
+section: "Blogs"
 layout: default
 ---
 

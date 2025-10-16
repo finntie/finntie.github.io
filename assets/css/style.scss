@@ -14,8 +14,12 @@ $header-link-color: #ffffff;
   top: 0;
   left: 0;
   padding: 10px; // Optional: for some spacing
-  font-size: 20px; // Adjust as needed
+  font-size: 20px;
   z-index: 1000; // Ensures it's above other items
+
+  @include small {
+    font-size: 0;
+  }
 }
 .site-name a {
   text-decoration: none;
@@ -23,34 +27,78 @@ $header-link-color: #ffffff;
 }
 
 .page-header {
- padding: 20px 0;
-
+  position:sticky;
+  top: 0px; // Required for sticky positioning
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0;
+  z-index: 250;
 }
 
 .btn {
+  position: relative;
   display: inline-block;
-  margin-bottom: 1rem;
   color: rgb(255, 255, 255);
   background-color: rgba(0, 0, 0, 0.08);
   border-color: rgba(0, 0, 0, 0.2);
   border-style: solid;
   border-width: 1px;
-  border-radius: 0.3rem;
+  border-radius: 0.0rem;
   transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  height: 100%;
+  margin: 0;
+  vertical-align: top;
+  text-align: center;
+  font-size: 0; //Hide content
+
+  //Display content using opacity transitioning
+  &::before{
+    content: attr(data-icon);
+    font-size: 16px;
+    transition: opacity 0.2s;
+    opacity: 1;
+  }
+  &::after {
+    content: attr(data-hover);
+    font-size: 16px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    opacity: 0;
+  }
 
   &:hover {
     color: rgb(255, 255, 255);
     text-decoration: none;
     background-color: rgba(0, 0, 0, 0.2);
     border-color: rgba(0, 0, 0, 0.3);
+
+    &::before{
+      opacity: 0;
+    }
+    
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(250, 249, 249, 0.3);
   }
 
   + .btn {
-    margin-left: 1rem;
+    margin-left: 0.25rem;
   }
 
   @include large {
-    padding: 0.75rem 1rem;
+    width: 7.5rem;
+    padding: 1.75rem 1rem;
   }
 
   @include medium {
@@ -63,9 +111,10 @@ $header-link-color: #ffffff;
     width: 100%;
     padding: 0.75rem;
     font-size: 0.9rem;
-
+    margin-top: 0rem; 
+  
     + .btn {
-      margin-top: 1rem;
+      margin-top: 0rem;
       margin-left: 0;
     }
   }
@@ -95,7 +144,7 @@ $header-link-color: #ffffff;
 
 .top-right {
   position:sticky;
-    top: 20px; // Required for sticky positioning
+  top: 100px; // Required for sticky positioning
   float: right; // Pushes button to the right
   margin-top: 20px;
   margin-right: 20px;
@@ -108,10 +157,33 @@ $header-link-color: #ffffff;
   border-radius: 5px; /* Rounded corners */
   border: none; /* Remove default button border */
   cursor: pointer; /* Change cursor to pointer when hovering */
+
+  @include small {
+    content: none;
+    display: none;
+  }
 }
 .top-right:hover {
   color: rgb(61, 61, 61); /* Change button text color when hoveringe */
   background-color: #9c9c9c81; /* Change background color when hovering */
+}
+
+body.My_Resume{
+  
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/media/Pitfall2D/Title.png');
+    background-size: cover; // Scales to cover entire area
+    background-position: center; // Centers the image
+
+    filter: blur(15px) brightness(0.8);
+    z-index: -1;
+  }
 }
 
 .buas-logo{

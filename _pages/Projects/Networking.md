@@ -1,6 +1,7 @@
 ---
 title: "Networking library"
 preview_title: "Networking"
+section: "Projects"
 layout: default
 ---
 

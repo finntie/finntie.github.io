@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#85b5cc">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=0a40f65d80c5fbc5ff9c9bcb2ebcc60fa88b1bcc">
+    <link rel="stylesheet" href="/assets/css/style.css?v=7a296b966976995ca1fcbf9371f0a4a5302efa02">
     <script src="/assets/js/main.js"></script> 
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
@@ -24,16 +24,23 @@
   <body>
     
     <header class="page-header" role="banner">
-      <h1 style="color: white;" class="project-name">Networking library</h1>
-      <h2 style="color: white;">
-        <a class="author" href="mailto: .buas.nl"></a>
-      </h2>
+      <div class="site-name">
+      <a href="/" title="Return to the homepage">Finntie</a>
+      </div>  
+          
       <h2 style="color: white;"></h2>
-      <a href="/" class="btn"> 🏠 </a>
-
+      <a href="/" 
+      class="btn " 
+      data-icon="🏠" 
+      data-hover="Home Page""> </a>
+      
       
         
-          <a href="/pages/Blogs.html" class="btn"> Blog Posts</a>
+          <a href="/pages/Blogs.html" 
+             class="btn " 
+             data-icon="✍️" 
+             data-hover="Blog Posts">
+          </a>        
         
       
         
@@ -43,16 +50,14 @@
         
       
         
-          <a href="/pages/Resume.html" class="btn"> Resume</a>
+          <a href="/pages/Resume.html" 
+             class="btn active" 
+             data-icon="📋" 
+             data-hover="Resume">
+          </a>        
         
       
     </header>
-
-
-
-    <div class="site-name">
-      <a href="/" title="Return to the homepage">Finntie</a>
-    </div>
     
     <button id="darkmodeButton" class="btn top-right">DarkMode</button>
 
@@ -135,8 +140,6 @@ These improvements I could make in the future when I need them. <br />
 But this is how far my networking library is at the moment.</p>
 
 <p><em>For more details about this library, <a href="../Blogs/Blog.html">read my blog</a></em></p>
-
-
 
       <footer class="site-footer">
         
