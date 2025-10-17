@@ -269,7 +269,7 @@ a:hover { text-decoration: underline; }
 @media screen and (max-width: 42em) { .btn { display: block; width: 100%; padding: 0.75rem; font-size: 0.9rem; }
   .btn + .btn { margin-top: 1rem; margin-left: 0; } }
 
-.page-header { color: #000; text-align: center; background-color: #31477e; background-image: linear-gradient(120deg, #24aba2, #31477e); }
+.page-header { color: #000; text-align: center; background-color: #159957; background-image: linear-gradient(120deg, #155799, #159957); }
 @media screen and (min-width: 64em) { .page-header { padding: 5rem 6rem; } }
 @media screen and (min-width: 42em) and (max-width: 64em) { .page-header { padding: 3rem 4rem; } }
 @media screen and (max-width: 42em) { .page-header { padding: 2rem 1rem; } }
@@ -322,12 +322,14 @@ a:hover { text-decoration: underline; }
 
 .site-footer-credits { color: #819198; }
 
+body { font-family: "Merriweather", serif; font-optical-sizing: auto; font-style: normal; z-index: 1; background-image: linear-gradient(120deg, #aad4ff, #b8ffdb); }
+
 .site-name { position: absolute; top: 0; left: 0; padding: 10px; font-size: 20px; z-index: 1000; }
 @media screen and (max-width: 42em) { .site-name { font-size: 0; } }
 
 .site-name a { text-decoration: none; color: white; }
 
-.page-header { position: sticky; top: 0px; display: flex; align-items: stretch; justify-content: center; padding: 0; z-index: 250; }
+.page-header { position: sticky; top: 0px; display: flex; align-items: stretch; justify-content: center; padding: 0; z-index: 250; background-color: #89fffa; background-image: linear-gradient(120deg, color-palet3, color-palet1); }
 
 .btn { position: relative; display: inline-block; color: white; background-color: rgba(0, 0, 0, 0.08); border-color: rgba(0, 0, 0, 0.2); border-style: solid; border-width: 1px; border-radius: 0.0rem; transition: color 0.2s, background-color 0.2s, border-color 0.2s; height: 100%; margin: 0; vertical-align: top; text-align: center; font-size: 0; }
 .btn::before { content: attr(data-icon); font-size: 16px; transition: opacity 0.2s; opacity: 1; }
@@ -336,6 +338,8 @@ a:hover { text-decoration: underline; }
 .btn:hover::before { opacity: 0; }
 .btn:hover::after { opacity: 1; }
 .btn.active { background-color: rgba(255, 255, 255, 0.2); border-color: rgba(250, 249, 249, 0.3); }
+.btn.active::before { opacity: 0; }
+.btn.active::after { opacity: 1; }
 .btn + .btn { margin-left: 0.25rem; }
 @media screen and (min-width: 64em) { .btn { width: 7.5rem; padding: 1.75rem 1rem; } }
 @media screen and (min-width: 42em) and (max-width: 64em) { .btn { padding: 0.6rem 0.9rem; font-size: 0.9rem; } }
@@ -345,16 +349,22 @@ a:hover { text-decoration: underline; }
 .author { color: #ffffff; text-decoration: none; }
 .author:hover { text-decoration: underline; }
 
+.main-content { position: relative; }
+
 .main-content.button-page { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: baseline; }
+
+#decorativeCirles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; overflow: hidden; }
+
+.random-circle { position: absolute; border-radius: 50%; }
 
 .site-footer { width: 100%; margin-top: 20px; }
 
-.top-right { position: sticky; top: 100px; float: right; margin-top: 20px; margin-right: 20px; margin-left: 20px; z-index: 10; /* Ensure it stays on top */ background-color: #2f2f2f; /* Button background color */ color: white; /* Button text color */ font-size: 16px; /* Text size */ padding: 10px 20px; /* Padding around the text (top/bottom, left/right) */ border-radius: 5px; /* Rounded corners */ border: none; /* Remove default button border */ cursor: pointer; /* Change cursor to pointer when hovering */ }
+.top-right { position: fixed; float: right; top: 100px; right: 20px; height: 3rem; margin-top: 20px; margin-right: 20px; margin-left: 20px; z-index: 10; /* Ensure it stays on top */ background-color: #2f2f2f; /* Button background color */ color: white; /* Button text color */ font-size: 16px; /* Text size */ padding: 10px 20px; /* Padding around the text (top/bottom, left/right) */ border-radius: 5px; /* Rounded corners */ border: none; /* Remove default button border */ cursor: pointer; /* Change cursor to pointer when hovering */ }
 @media screen and (max-width: 42em) { .top-right { content: none; display: none; } }
 
 .top-right:hover { color: #3d3d3d; /* Change button text color when hoveringe */ background-color: #9c9c9c81; /* Change background color when hovering */ }
 
-body.My_Resume::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: url("/assets/media/Pitfall2D/Title.png"); background-size: cover; background-position: center; filter: blur(15px) brightness(0.8); z-index: -1; }
+body.My_Projects::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; filter: blur(15px) brightness(0.8); z-index: -1; }
 
 .buas-logo { float: left; margin-left: calc(-1 * (50vw - 50%)); margin-right: 20px; margin-bottom: 10px; background-color: rgba(255, 255, 255, 0); width: 300px; }
 
@@ -365,11 +375,11 @@ body.My_Resume::before { content: ''; position: fixed; top: 0; left: 0; width: 1
 .page-button:hover { text-decoration: none; transform: scale(1.1); }
 .page-button:hover span { transform: scale(1.05); }
 
-.page-info-button { display: flex; flex-direction: column; align-items: center; background-color: rgba(205, 98, 36, 0.507); border: transparent; border-radius: 5px 5px 10px 10px; padding: 5px; cursor: pointer; text-align: center; width: 320px; transition: transform 0.3s ease-in-out; /* Set color based on type */ }
-.page-info-button[data-type="School - Solo"] { background-color: rgba(47, 179, 184, 0.507); }
-.page-info-button[data-type="School - Team"] { background-color: rgba(254, 210, 64, 0.507); }
-.page-info-button[data-type="Self-Study - Solo"] { background-color: rgba(196, 95, 137, 0.507); }
-.page-info-button[data-type="School - Team"] { background-color: rgba(15, 15, 200, 0.507); }
+.page-info-button { display: flex; flex-direction: column; align-items: center; background-color: color-palet3; border: transparent; border-radius: 5px 5px 10px 10px; padding: 5px; cursor: pointer; text-align: center; width: 320px; transition: transform 0.3s ease-in-out; /* Set color based on type */ }
+.page-info-button[data-type="School - Solo"] { background-color: #499c98; }
+.page-info-button[data-type="School - Team"] { background-color: #489b60; }
+.page-info-button[data-type="Self-Study - Solo"] { background-color: #489b60; }
+.page-info-button[data-type="Self-Study - Team"] { background-color: #489b60; }
 .page-info-button .title { margin-top: 10px; font-size: 22px; color: black; border-radius: 5px; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ padding: 7px; }
 .page-info-button img, .page-info-button video { width: 300px; height: 300px; border: 1px solid black; border-radius: 5px; object-fit: cover; }
 .page-info-button .type { margin-top: 10px; font-size: 16px; color: black; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ padding: 7px; }

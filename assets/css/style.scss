@@ -1,13 +1,25 @@
 ---
 ---
+$color-palet1: rgba(137, 255, 250, 255);
+$color-palet2: rgba(137, 255, 169, 255);
+$color-palet3: rgba(73, 156, 152, 255);
+$color-palet4: rgba(72, 155, 96, 255);
 
 $header-heading-color: #000;
-$header-bg-color: #31477e;
-$header-bg-color-secondary: #24aba2;
 $section-headings-color: #000;
 $header-link-color: #ffffff;
 
 @import "{{ site.theme }}";
+
+
+body {
+  font-family: "Merriweather", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  z-index: 1;
+  //background-color: $color-palet1; 
+  background-image: linear-gradient(120deg, #aad4ff, #b8ffdb);
+}
 
 .site-name {
   position: absolute;
@@ -34,6 +46,8 @@ $header-link-color: #ffffff;
   justify-content: center;
   padding: 0;
   z-index: 250;
+  background-color: $color-palet1; 
+  background-image: linear-gradient(120deg, color-palet3, color-palet1);
 }
 
 .btn {
@@ -90,6 +104,12 @@ $header-link-color: #ffffff;
   &.active {
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(250, 249, 249, 0.3);
+    &::before {
+      opacity: 0; // Hide icon
+    }
+    &::after {
+      opacity: 1; // Show text
+    }
   }
 
   + .btn {
@@ -129,6 +149,11 @@ $header-link-color: #ffffff;
   }
 }
 
+.main-content {
+  position: relative;
+  //z-index: 1;
+  }
+
 .main-content.button-page {
   display: flex;
   flex-wrap: wrap;
@@ -137,15 +162,33 @@ $header-link-color: #ffffff;
   align-items: baseline;
 }
 
+#decorativeCirles {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.random-circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
 .site-footer {
   width: 100%;
   margin-top: 20px; 
 }
 
 .top-right {
-  position:sticky;
-  top: 100px; // Required for sticky positioning
+  position:fixed;
   float: right; // Pushes button to the right
+  top: 100px; // Required for sticky positioning
+  right: 20px;
+  height: 3rem;
   margin-top: 20px;
   margin-right: 20px;
   margin-left: 20px;
@@ -168,7 +211,7 @@ $header-link-color: #ffffff;
   background-color: #9c9c9c81; /* Change background color when hovering */
 }
 
-body.My_Resume{
+body.My_Projects{
   
   &::before {
     content: '';
@@ -177,7 +220,7 @@ body.My_Resume{
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/assets/media/Pitfall2D/Title.png');
+    //background-image: url('/assets/media/Pitfall2D/Title.png');
     background-size: cover; // Scales to cover entire area
     background-position: center; // Centers the image
 
@@ -246,7 +289,7 @@ body.My_Resume{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(205, 98, 36, 0.507); 
+  background-color: color-palet3; 
   border: transparent;
   border-radius: 5px 5px 10px 10px;
   padding: 5px;
@@ -257,16 +300,16 @@ body.My_Resume{
 
   /* Set color based on type */
   &[data-type="School - Solo"]{
-    background-color: rgba(47, 179, 184, 0.507); 
+    background-color: $color-palet3; 
   }
   &[data-type="School - Team"]{
-    background-color: rgba(254, 210, 64, 0.507); 
+    background-color: $color-palet4; 
   }
   &[data-type="Self-Study - Solo"]{
-    background-color: rgba(196, 95, 137, 0.507); 
+    background-color: $color-palet4; 
   }
-  &[data-type="School - Team"]{
-    background-color: rgba(15, 15, 200, 0.507); 
+  &[data-type="Self-Study - Team"]{
+    background-color: $color-palet4; 
   }
 
   .title{
