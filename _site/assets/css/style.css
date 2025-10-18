@@ -372,8 +372,8 @@ body.My_Projects::before { content: ''; position: fixed; top: 0; left: 0; width:
 .page-button { display: flex; flex-direction: column; align-items: center; background-color: rgba(163, 197, 198, 0.507); border: transparent; border-radius: 5px 5px 10px 10px; padding: 5px; cursor: pointer; text-align: center; width: 320px; transition: transform 0.3s ease-in-out; }
 .page-button img, .page-button video { width: 300px; height: 300px; border: 1px solid black; border-radius: 5px; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ }
 .page-button span { margin-top: 10px; font-size: 16px; color: black; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ padding: 7px; }
-.page-button:hover { text-decoration: none; transform: scale(1.1); }
-.page-button:hover span { transform: scale(1.05); }
+.page-button:hover { text-decoration: none; transform: scale(1.02); }
+.page-button:hover span { transform: scale(1.02); }
 
 .page-info-button { display: flex; flex-direction: column; align-items: center; background-color: color-palet3; border: transparent; border-radius: 5px 5px 10px 10px; padding: 5px; cursor: pointer; text-align: center; width: 320px; transition: transform 0.3s ease-in-out; /* Set color based on type */ }
 .page-info-button[data-type="School - Solo"] { background-color: #499c98; }
@@ -386,5 +386,5 @@ body.My_Projects::before { content: ''; position: fixed; top: 0; left: 0; width:
 .page-info-button .type::before { content: "Type: "; font-weight: bold; }
 .page-info-button .description { margin-top: 10px; font-size: 16px; color: black; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ padding: 7px; }
 .page-info-button .description::before { content: "Description: "; font-weight: bold; }
-.page-info-button:hover { text-decoration: none; transform: scale(1.1); }
-.page-info-button:hover span { transform: scale(1.05); }
+.page-info-button:hover { text-decoration: none; transform: scale(1.02); }
+.page-info-button:hover span { transform: scale(1.02); }

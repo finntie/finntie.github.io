@@ -9,7 +9,7 @@ layout: default
 
 ### Exercise
 <div style="float: right; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
-<img src="/assets/media/Pitfall2D/oldGame.png" width="250" style="margin: -10px 20px 0px 0;">
+<img src="/assets/media/Pitfall2D/OldGame.png" width="250" style="margin: -10px 20px 0px 0;">
 </div>
 The exercise was to make our own version of the old game [Pitfall!](https://en.wikipedia.org/wiki/Pitfall!) <br>
 This was a 2D platformer from 1982 about someone named Harry who wanted to go treasure hunting in the jungle. <br>
