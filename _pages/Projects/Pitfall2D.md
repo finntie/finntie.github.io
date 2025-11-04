@@ -21,7 +21,7 @@ I myself had little programming knowledge due to being the second project with C
 But there were enough sources to help me, online and from peers and lecturers.
 
 ### What I did
-This video shows the gameplay from the final product of 8 weeks work.
+This video shows the gameplay from the final product of 8 weeks work (2023).
 <div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
 <video width="1000" style="margin: -10px 20px 10px 0;" controls>
 <source src="/assets/media/Pitfall2D/GamePlay.mp4" type="video/mp4">

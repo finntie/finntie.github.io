@@ -8,7 +8,7 @@ layout: default
 <img id="BuasLogo" src="/assets/media/LogoBUas_RGB.png" class="buas-logo" alt="BuasLogo">
 
 ### Exercise
-This 8 weeks on school, we had to learn several things. <br>
+This 8 weeks on school (2024), we had to learn several things. <br>
 We were challenged to create a 3D game on the Rasberry Pi with using openGL. <br>
 During this time, I had worked with neither of those. So, starting would be pretty difficult. <br>
 
