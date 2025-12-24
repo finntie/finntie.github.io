@@ -7,16 +7,14 @@ layout: default
 
 <img id="BuasLogo" src="/assets/media/LogoBUas_RGB.png" class="buas-logo" alt="BuasLogo">
 
-### Exercise
+In the third block of my first year, we were exercised to expand upon a <strong style="color:black;"><u>voxel raytracer</u></strong>.  <br>
+In this project page, I show the progress I did, explain some parts and show nice looking videos/images. <br>
+This project was done using <strong style="color:black;"><u>C++</u></strong>, we received a <strong style="color:black;"><u>template</u></strong> as starting point. In this template was already a small world of voxels and a voxel raytracer. <br>
+Our goal as students, was to <strong style="color:black;"><u>expand</u></strong> upon this raytracer and add many more functionalities to it. At the end we had to create a <strong style="color:black;"><u>small game</u></strong> with it.
+
 <div style="float: right; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
 <img src="/assets/media/RayTrace/angleOfIncedence.gif" width="250" style="margin: -10px 20px 10px 10;">
 </div>
-In the third block of my first year (2024), we were exercised to expand upon a voxel ray tracer.  <br>
-The starting point was a template which traces already a cluster of voxels. 
-On the right you can see this starting point, but I already added angle of incedence to it.
-
-We had to add more functionality to this renderer, such as including more features like different light types and more different materials and 
-optimizing the renderer to make sure it runs fast enough.
 
 
 ### What I did

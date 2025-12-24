@@ -7,12 +7,12 @@ layout: default
 
 <img id="BuasLogo" src="/assets/media/LogoBUas_RGB.png" class="buas-logo" alt="BuasLogo">
 
-### Exercise
 <div style="float: right; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
 <img src="/assets/media/Pitfall2D/OldGame.png" width="250" style="margin: -10px 20px 0px 0;">
 </div>
-The exercise was to make our own version of the old game [Pitfall!](https://en.wikipedia.org/wiki/Pitfall!) <br>
-This was a 2D platformer from 1982 about someone named Harry who wanted to go treasure hunting in the jungle. <br>
+In my first block in the first year, I had to recreate 2D [<u>Pitfall!</u>](https://en.wikipedia.org/wiki/Pitfall!). <br>
+This had to be done using <strong style="color:black;"><u>C++</u></strong>, we were given enough <strong style="color:black;"><u>freedom</u></strong> to steer the game into our own direction.
+In this project page I show a <strong style="color:black;"><u>recap</u></strong> of what I did this block and also some small details on how. 
 
 ### Starting point
 We were given a template to start with. This template was made for 2D pixel games. <br>

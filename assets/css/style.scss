@@ -145,17 +145,66 @@ body {
   }
 }
 
+.socials-container{
+  position: absolute;
+  text-align: right;
+
+    @include large {
+    right: 15px;
+    top: 15px;
+  }
+
+  @include medium {
+    right: 5px;
+    top: 5px;
+  }
+  
+  &[hide-small="true"]{
+    @include small {
+      display: none;
+    }
+  }
+
+}
+
 .socials-btn{
-  display: inline;
   border: transparent;
-  border-radius: 5px 5px 10px 10px;
   padding: 5px;
   cursor: pointer; 
-  width: 60px;
 
-  img {
-    width: 50px;
-    height: 50px;
+  @include large {
+    width: 60px;
+    img {
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+    }
+  }
+
+  @include medium {
+    img {
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+    }
+  }
+
+  
+  &[hide-small="true"]{
+    background-color: $color-palet3; 
+    @include small {
+      display: none;
+    }
+  }
+
+  &:not([hide-small="true"]) {
+      @include small {
+        img {
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+      }
+    }
   }
 }
 
@@ -394,6 +443,29 @@ body.My_Projects{
     }
   }
 
+  .time {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    border-radius: 10px;
+    background-color: #f2f543;
+    font-size: 16px;
+    color: black;
+    padding: 5px;
+    height: 32px;
+  }
+
+  .description-row{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 10px;
+  }
+
   .description{
     height: 96px;
     margin-top: 10px;
@@ -405,6 +477,21 @@ body.My_Projects{
       content: "Description: ";
       font-weight: bold;
     }
+  }
+
+  .date {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px;
+    background-color: #d28585;
+    font-size: 16px;
+    color: black;
+    padding: 5px;
+    height: 32px;
   }
 
   &:hover{

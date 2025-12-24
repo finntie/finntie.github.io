@@ -7,10 +7,11 @@ layout: default
 
 <img id="BuasLogo" src="/assets/media/LogoBUas_RGB.png" class="buas-logo" alt="BuasLogo">
 
+In the second year of my study, I had 8 weeks to choose a topic myself to work on. I chose to learn <strong style="color:black;"><u>multiplayer</u></strong> in programming.
+I had no prior experience at all with multiplayer, so I started <strong style="color:black;"><u>from scratch</u></strong>.
+I decided to create a small <strong style="color:black;"><u>networking library</u></strong> using <strong style="color:black;"><u>C++</u></strong> and <strong style="color:black;"><u>winsock2</u></strong>.
+Within this project page, I tell more about the games I made with this library. For more in depth about the code and explanation, read [<u>the blog</u>](../Blogs/Blog.html).
 
-**In the second year of my study, I wanted to learn how multiplayer works.** <br>
-**I had no idea how this worked and was intrigued in this subject.** <br>
-**So, for my self-study project for that block of the year (8 weeks), I choose to make my own networking library.**
 
 ### Starting Point
 This started very rough, since I had no knowledge of networking. I did not know what IPs were, what the difference is between UDP and TCP and more. <br>

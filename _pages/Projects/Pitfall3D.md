@@ -7,14 +7,11 @@ layout: default
 
 <img id="BuasLogo" src="/assets/media/LogoBUas_RGB.png" class="buas-logo" alt="BuasLogo">
 
-### Exercise
-This 8 weeks on school (2024), we had to learn several things. <br>
-We were challenged to create a 3D game on the Rasberry Pi with using openGL. <br>
-During this time, I had worked with neither of those. So, starting would be pretty difficult. <br>
-
-Before the start of the block, I had already done some research on openGL using the [learnopengl](https://learnopengl.com) website. <br>
-But an important note is that we were given 2 possible templates to start with, already including some code for openGL. <br>
-There were some problems with the templates, so what I did was start from scratch and implement parts of both templates.
+In this project page, I describe the progress I went through for making a <strong style="color:black;"><u>3D Pitfall!</u></strong> inspired, game. 
+This was done using <strong style="color:black;"><u>C++</u></strong>, <strong style="color:black;"><u>OpenGL</u></strong> and using physics from [<u>Bullet</u>](https://github.com/bulletphysics/bullet3).
+Not to mention that we needed to create this game on the <strong style="color:black;"><u>Rasberry Pi</u></strong>. <br>
+It was a pretty slow start, learning how to work with the Pi and also openGL. <br>
+We luckily got a <strong style="color:black;"><u>template</u></strong> to start with, although there were some problems with the template. So, many things we had to do over. 
 
 ### What I did
 <div style="float: right; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">

@@ -347,8 +347,18 @@ body { font-family: "Merriweather", serif; font-optical-sizing: auto; font-style
 @media screen and (max-width: 42em) { .btn { display: block; width: 100%; padding: 0.75rem; font-size: 0.9rem; margin-top: 0rem; }
   .btn + .btn { margin-top: 0rem; margin-left: 0; } }
 
-.socials-btn { display: inline; border: transparent; border-radius: 5px 5px 10px 10px; padding: 5px; cursor: pointer; width: 60px; }
-.socials-btn img { width: 50px; height: 50px; }
+.socials-container { position: absolute; text-align: right; }
+@media screen and (min-width: 64em) { .socials-container { right: 15px; top: 15px; } }
+@media screen and (min-width: 42em) and (max-width: 64em) { .socials-container { right: 5px; top: 5px; } }
+@media screen and (max-width: 42em) { .socials-container[hide-small="true"] { display: none; } }
+
+.socials-btn { border: transparent; padding: 5px; cursor: pointer; }
+@media screen and (min-width: 64em) { .socials-btn { width: 60px; }
+  .socials-btn img { width: 50px; height: 50px; border-radius: 5px; } }
+@media screen and (min-width: 42em) and (max-width: 64em) { .socials-btn img { width: 30px; height: 30px; border-radius: 5px; } }
+.socials-btn[hide-small="true"] { background-color: #499c98; }
+@media screen and (max-width: 42em) { .socials-btn[hide-small="true"] { display: none; } }
+@media screen and (max-width: 42em) { .socials-btn:not([hide-small="true"]) img { width: 30px; height: 30px; border-radius: 5px; } }
 
 .author { color: #ffffff; text-decoration: none; }
 .author:hover { text-decoration: underline; }
@@ -393,7 +403,10 @@ body.My_Projects::before { content: ''; position: fixed; top: 0; left: 0; width:
 .page-info-button .type[data-type="🏠"] { background-color: #7a6eae; }
 .page-info-button .type[data-type="👤"] { background-color: #00d5ff; }
 .page-info-button .type[data-type="👥"] { background-color: #d85eb1; }
+.page-info-button .time { display: flex; position: absolute; align-items: center; justify-content: center; right: 0; border-radius: 10px; background-color: #f2f543; font-size: 16px; color: black; padding: 5px; height: 32px; }
+.page-info-button .description-row { display: flex; width: 100%; align-items: center; justify-content: center; position: relative; margin-top: 10px; }
 .page-info-button .description { height: 96px; margin-top: 10px; font-size: 16px; color: black; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ padding: 7px; }
 .page-info-button .description::before { content: "Description: "; font-weight: bold; }
+.page-info-button .date { display: flex; position: absolute; align-items: center; justify-content: center; bottom: 0; left: 0; border-radius: 10px; background-color: #d28585; font-size: 16px; color: black; padding: 5px; height: 32px; }
 .page-info-button:hover { text-decoration: none; transform: scale(1.02); }
 .page-info-button:hover span { transform: scale(1.02); }
