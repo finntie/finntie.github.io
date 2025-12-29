@@ -8,7 +8,7 @@ layout: default
 
 
 
-**How would one message another person that is on the other side of the world?**
+**How would one person message another person that is on the other side of the world?**
 <br>You simple send them a message via whatsapp, or send them an email.
 <br> <br>
 It sounds very simple, but what is happening on the inside?<br>

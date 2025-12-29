@@ -56,7 +56,7 @@ In this video I play as one player (green), while on my other screen I also play
 </video>
 </div>
 
-**2D shooter**
+**2D shooter** <br>
 In my free time I also made a 2D shooter using this library.
 This was further in the production, yet, still not finished. <br>
 For this game I used box2D to get my physics to work. <br>
@@ -66,14 +66,14 @@ For this game I used box2D to get my physics to work. <br>
 </video>
 </div>
 
-**Blender (W.I.P.)**
-Currently for my year 3, first block, I am making Blender multiplayer. <br>
+**Blender** <br>
+For my year 3, first block, I made Blender multiplayer. <br>
 I have not seen instances of this being done using Blender's source code, so there was a lot to discover.<br>
-More about this in my (soon) blender blog/project. <br>
-The weird shading on the newly created cubes is due to normals not being updated correctly.
+More about this in my [blender project](../Projects/BlenderMultiplayer.html). <br>
+This video shows local connection established and creation/movement of objects between programs.
 <div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
 <video width="800" style="margin: -10px 20px 10px 0;" controls>
-<source src="../../assets/media/CreateStandardCube.mp4" type="video/mp4">
+<source src="../../assets/media/BlenderMultiplayer/CreatingObjectsFullyWorking.mp4" type="video/mp4">
 </video>
 </div>
 

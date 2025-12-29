@@ -40,6 +40,22 @@ layout: buttonpage
 </div>
 </a>
 
+<a href="Projects/Igknighted.html" class="page-info-button" data-type="School - Team">
+<img src="/assets/media/Igknighted/Title.png" alt="Image1">
+<div class="title-row">
+    <span class="title">Blender</span>
+    <div class="types-column">
+        <span class="type" data-type="🏫">🏫</span>
+        <span class="type" data-type="👥">👥</span>
+    </div>
+    <span class="time"> 8 weeks</span>
+</div>
+<div class="description-row">
+    <span class="description">Team project working in Unreal Engine</span>
+    <span class="date">2024</span>
+</div>
+</a>
+
 <a href="Projects/Pitfall2D.html" class="page-info-button" data-type="School - Solo">
 <img src="/assets/media/Pitfall2D/Title.png" alt="Image1">
 <div class="title-row">
