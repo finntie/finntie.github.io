@@ -14,6 +14,12 @@ This was the first time I worked with <strong style="color:black;"><u>Unreal Eng
 During this project I mainly worked on the <strong style="color:black;"><u>enemies</u></strong> and the <strong style="color:black;"><u>fog system</u></strong>. <br>
 **[Here is the Itch.io game page](https://buas.itch.io/igknighted)**, this includes the game itself, a trailer and some screenshots.
 
+In-Game screenshot:
+<div style="display: flex; justify-content: left; align-items: center; gap: 20px; margin: 0 auto;">
+<img src="/assets/media/Igknighted/InGame.png" width="90%" style="margin: -10px 20px 10px 0px;">
+</div> 
+
+
 **Enemies** <br>
 To start working on the enemies, I had to know about how to use AI in UE. <br>
 For this I watched multiple tutorials, [including this one](https://www.youtube.com/watch?v=iY1jnFvHgbE). <br>

@@ -26,3 +26,8 @@ But I succeeded and got into the study. <br>
 Since then I kept programming during school and also during my freetime. <br>
 Now I am a <strong style="color:black;"><u>general programmer</u></strong> and love to do many different things. <br>
 I love to combine my hobby of <strong style="color:black;"><u>meteorology</u></strong> with programming and create handy features I could use. <br>
+
+
+### Resume
+<embed src="/assets/media/extras/Resume.pdf" width="60%" height="700px" 
+ type="application/pdf">

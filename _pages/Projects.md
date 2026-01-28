@@ -40,10 +40,42 @@ layout: buttonpage
 </div>
 </a>
 
+<a href="Projects/GoingBonkers.html" class="page-info-button" data-type="School - Team">
+<img src="/assets/media/GoingBonkers/Title.png" alt="Image1">
+<div class="title-row">
+    <span class="title">GoingBonkers!</span>
+    <div class="types-column">
+        <span class="type" data-type="🏫">🏫</span>
+        <span class="type" data-type="👥">👥</span>
+    </div>
+    <span class="time"> 8 weeks</span>
+</div>
+<div class="description-row">
+    <span class="description">Second team project with working in Unreal Engine</span>
+    <span class="date">2025</span>
+</div>
+</a>
+
+<a href="Projects/RayTrace.html" class="page-info-button" data-type="School - Solo">
+<img src="/assets/media/RayTrace/Thumbnail.png" alt="Image1">
+<div class="title-row">
+    <span class="title">RayTracing</span>
+    <div class="types-column">
+        <span class="type" data-type="🏫">🏫</span>
+        <span class="type" data-type="👤">👤</span>
+    </div>
+    <span class="time"> 8 weeks</span>
+</div>
+<div class="description-row">
+    <span class="description">Ray tracing voxels</span>
+    <span class="date">2024</span>
+</div>
+</a>
+
 <a href="Projects/Igknighted.html" class="page-info-button" data-type="School - Team">
 <img src="/assets/media/Igknighted/Title.png" alt="Image1">
 <div class="title-row">
-    <span class="title">Blender</span>
+    <span class="title">Igknighted</span>
     <div class="types-column">
         <span class="type" data-type="🏫">🏫</span>
         <span class="type" data-type="👥">👥</span>
@@ -88,18 +120,3 @@ layout: buttonpage
 </div>
 </a>
 
-<a href="Projects/RayTrace.html" class="page-info-button" data-type="School - Solo">
-<img src="/assets/media/RayTrace/Thumbnail.png" alt="Image1">
-<div class="title-row">
-    <span class="title">RayTracing</span>
-    <div class="types-column">
-        <span class="type" data-type="🏫">🏫</span>
-        <span class="type" data-type="👤">👤</span>
-    </div>
-    <span class="time"> 8 weeks</span>
-</div>
-<div class="description-row">
-    <span class="description">Ray tracing voxels</span>
-    <span class="date">2024</span>
-</div>
-</a>
