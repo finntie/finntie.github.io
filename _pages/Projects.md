@@ -4,6 +4,7 @@ preview_title: "Projects"
 section: Projects
 icon: 📋
 layout: buttonpage
+nav_order: 1
 ---
 
 <body class="{{ page.title }}">
@@ -21,6 +22,22 @@ layout: buttonpage
 <div class="description-row">
     <span class="description">I made a small networking library using winsock2</span>
     <span class="date">2024 / 2025</span>
+</div>
+</a>
+
+<a href="Projects/WeatherSimulation.html" class="page-info-button" data-type="Self-Study - Solo">
+<img src="/assets/media/WeatherSim/Title.png" alt="Image1">
+<div class="title-row">
+    <span class="title">Weather Sim</span>
+    <div class="types-column">
+        <span class="type" data-type="🏠">🏠</span>
+        <span class="type" data-type="👤">👤</span>
+    </div>
+    <span class="time"> 1 year</span>
+</div>
+<div class="description-row">
+    <span class="description">Exploring many different parts in a long lasting personal project</span>
+    <span class="date">2025 / 2026</span>
 </div>
 </a>
 

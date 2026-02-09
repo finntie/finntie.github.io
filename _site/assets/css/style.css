@@ -367,10 +367,49 @@ body { font-family: "Merriweather", serif; font-optical-sizing: auto; font-style
 
 .main-content.button-page { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: baseline; }
 
-#decorativeCirles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; overflow: hidden; }
+/* -----------------Sidebar----------------- */
+/* Right Sidebar Navigation */
+.sidebar-nav { position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 1000; display: flex; flex-direction: column; gap: 15px; padding: 20px 10px; }
 
-.random-circle { position: absolute; border-radius: 50%; }
+/* Hide all names when any link is hovered */
+.sidebar-nav-link:hover ~ .sidebar-nav-name, .sidebar-nav:has(.sidebar-nav-link:hover) .sidebar-nav-name { opacity: 0; visibility: hidden; }
 
+/* Show tooltip when link is hovered */
+.sidebar-nav-link:hover ~ .sidebar-tooltip { opacity: 1; transform: translateX(0); visibility: visible; }
+
+.sidebar-nav-item { position: relative; display: flex; align-items: center; justify-content: flex-end; gap: 12px; transition: all 0.3s ease; }
+
+.sidebar-nav-name { background: #89fffa; color: black; padding: 8px 16px; border-radius: 6px; font-size: 14px; white-space: nowrap; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); transition: all 0.3s ease, opacity 0.3s ease, visibility 0.3s ease; position: relative; }
+
+.sidebar-nav-name::after { content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); width: 0; height: 0; display: block; border-left: 6px solid #489b60; border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+
+.sidebar-nav-item:hover .sidebar-nav-name { background: #89fffa; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); transform: translateX(-5px); }
+
+.sidebar-nav-link { display: flex; align-items: center; justify-content: center; width: 50px; height: 50px; background: #499c98; border-radius: 50%; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; text-decoration: none; border: 2px solid transparent; }
+
+.sidebar-nav-link:hover { transform: scale(1.1); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); border-color: #4CAF50; transition: all 0.3s ease; }
+
+.sidebar-nav-icon { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; padding: 2px; }
+
+/* If using emoji or text icons instead of images */
+.sidebar-nav-link .emoji-icon { font-size: 24px; }
+
+/* Tooltip/Description on hover */
+.sidebar-tooltip { position: absolute; right: 65px; background: #89fffa; color: white; padding: 5px 5px; border-radius: 6px; white-space: nowrap; font-size: 14px; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; transform: translateX(10px); z-index: 10; }
+
+.sidebar-tooltip::after { content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-left: 6px solid #499c98; border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+
+/* Active state */
+.sidebar-nav-link.active { background: rgba(76, 175, 80, 0.2); border-color: #4CAF50; }
+
+.sidebar-nav-link.active .sidebar-nav-icon { opacity: 0.8; }
+
+.sidebar-nav:has(.sidebar-nav-link.active) .sidebar-nav-name::after { display: none; }
+
+.sidebar-nav .sidebar-nav-item:has(.sidebar-nav-link.active) .sidebar-nav-name::after { display: block; }
+
+/* Responsive - hide on mobile */
+@media (max-width: 768px) { .sidebar-nav { display: none; } }
 .site-footer { width: 99vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); border-top: 1px solid #656565; margin-top: 20px; }
 
 .top-right { position: fixed; float: right; top: 100px; right: 20px; height: 3rem; margin-top: 20px; margin-right: 20px; margin-left: 20px; z-index: 10; /* Ensure it stays on top */ background-color: #2f2f2f; /* Button background color */ color: white; /* Button text color */ font-size: 16px; /* Text size */ padding: 10px 20px; /* Padding around the text (top/bottom, left/right) */ border-radius: 5px; /* Rounded corners */ border: none; /* Remove default button border */ cursor: pointer; /* Change cursor to pointer when hovering */ }
@@ -405,7 +444,7 @@ body.My_Projects::before { content: ''; position: fixed; top: 0; left: 0; width:
 .page-info-button .type[data-type="👥"] { background-color: #d85eb1; }
 .page-info-button .time { display: flex; position: absolute; align-items: center; justify-content: center; right: 0; border-radius: 10px; background-color: #f2f543; font-size: 16px; color: black; padding: 5px; height: 32px; }
 .page-info-button .description-row { display: flex; width: 100%; align-items: center; justify-content: center; position: relative; margin-top: 10px; }
-.page-info-button .description { height: 96px; margin-top: 10px; font-size: 16px; color: black; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ padding: 7px; }
+.page-info-button .description { height: 96px; margin-top: 10px; font-size: 16px; color: black; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ padding: 7px; overflow-wrap: break-word; white-space: normal; }
 .page-info-button .description::before { content: "Description: "; font-weight: bold; }
 .page-info-button .date { display: flex; position: absolute; align-items: center; justify-content: center; bottom: 0; left: 0; border-radius: 10px; background-color: #d28585; font-size: 16px; color: black; padding: 5px; height: 32px; }
 .page-info-button:hover { text-decoration: none; transform: scale(1.02); }
