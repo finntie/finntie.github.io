@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#85b5cc">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=d10f564f43d44416dc2c4f396d683d6ab9a06830">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1505981f29d67a27669f18546439e1106ec1f2d9">
     <script src="/assets/js/main.js"></script> 
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
@@ -90,7 +90,7 @@
     <main id="content" class="main-content" role="main">
       <p><img id="BuasLogo" src="/assets/media/LogoBUas_RGB.png" class="buas-logo" alt="BuasLogo" /></p>
 
-<p><strong>How would one person message another person that is on the other side of the world?</strong>
+<p><strong>How would one person, message another person, that is on the other side of the world?</strong>
 <br />You simple send them a message via whatsapp, or send them an email.
 <br /> <br />
 It sounds very simple, but what is happening on the inside?<br />
@@ -99,9 +99,10 @@ How do you program networking?</p>
 
 <p>I wrote a simple networking library for windows.
 I created this library in 8 weeks, before this I knew nothing about networking.<br />
-In this blog I will help you understand networking and how I created a small library for it.</p>
+But after this 8 weeks, the library still had many issues and potential improvements, so to this day I still improve it from time to time.
+And in this blog, I will help you understand networking, and how I created a small library for it.</p>
 
-<p><strong><font color="red">This library is currently not publicly available</font></strong></p>
+<p>To access this library, you can visit <strong><a href="https://github.com/finntie/Windows-Network-Library-Dance">the github</a></strong>, where you can find all the code.</p>
 
 <h2 id="what-is-networking">What is networking?</h2>
 
@@ -152,7 +153,7 @@ This however would not always work. Especially not with a NAT type called a symm
 This means however, you can not use winsock2 code on linux or BSD socket code on windows. Luckily, they differ so slightly that you can keep most of the code the same without any issues.</p>
 
 <p>A crucial part in networking are sockets.<br />
-Sockets serves as endpoints in sending and receiving data. A socket uses a socket adress to be identified by other hosts. This adress needs 3 things: the <strong>port number</strong>, <strong>the protocol</strong> used and the <strong>IP-adress</strong>. It uses these things to indentify the correct destination or source for the connection.</p>
+Sockets serve as endpoints in sending and receiving data. A socket uses a socket adress to be identified by other hosts. This adress needs 3 things: the <strong>port number</strong>, <strong>the protocol</strong> used and the <strong>IP-adress</strong>. It uses these things to indentify the correct destination or source for the connection.</p>
 
 <p>A <strong>Port number</strong> is a 16-bit unsigned integer. It is used to identify a specific endpoint. <br />
 Ports ranging between 0 and 1024 are well-known ports or system ports, these are mostly reserved/assigned by the IANA (Internet Assigned Numbers Authority).</p>
@@ -246,7 +247,7 @@ The receiving function blocks at default, meaning it will wait until it receives
 </code></pre></div></div>
 <p>You can decide if you want to use callback functions, these could be handy with getting important packages. Enabling the usage of callback functions will cause an extra thread to be used.
 <br />You could also force IPV4 to be sure everyone can connect if some devices don’t support IPV6.
-<em>(This can also be done using</em> <font color="#962f2f">setIPV</font>())</p>
+<em>(This can also be done using</em> <font color="#962f2f">setForceIPV4</font>(bool forceIPV4))</p>
 
 <h3 id="connecting">Connecting</h3>
 
@@ -256,6 +257,7 @@ Meaning that someone has to take the role as host.
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">Host</span><span class="p">(</span><span class="n">DanceMoves</span> <span class="n">moves</span><span class="p">,</span>
             <span class="kt">int</span> <span class="n">MaxConnections</span><span class="p">,</span>
             <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">Port</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="kt">bool</span> <span class="n">ForceIPV4</span> <span class="o">=</span> <span class="nb">false</span>
             <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;&amp;</span> <span class="n">clientsIP</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">());</span>
 </code></pre></div></div>
 <ul>
@@ -263,23 +265,22 @@ Meaning that someone has to take the role as host.
 The connection will be determined based on this value.</li>
   <li>You can add a maximum of total connection allowed into the network.</li>
   <li>A port number could be specified. This can also be changed by the programmer internally.</li>
+  <li>You can again force IPV4 when starting to host.</li>
   <li>If a Public network has been chosen, the host has to add the IPs of all clients connected.</li>
 </ul>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">Connect</span><span class="p">(</span><span class="n">DanceMoves</span> <span class="n">moves</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">hostIP</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">Port</span> <span class="o">=</span> <span class="mi">0</span><span class="p">);</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">Connect</span><span class="p">(</span><span class="n">DanceMoves</span> <span class="n">moves</span><span class="p">,</span> <span class="kt">char</span><span class="o">*</span> <span class="n">hostIP</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span><span class="o">*</span> <span class="n">Port</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">ForceIPV4</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
 </code></pre></div></div>
 <p>‘Connect’ is more or less the same, the only difference is that filling in the hostIP is necessary.</p>
 
-<p>Example:</p>
+<p><strong>Example:</strong></p>
 <div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="n">host</span><span class="p">)</span>
 <span class="p">{</span>   
-    <span class="c1">//Always host first</span>
-    <span class="n">DanceObj</span><span class="p">.</span><span class="n">Host</span><span class="p">(</span><span class="n">networkType</span><span class="p">,</span> <span class="n">maxAmountConnections</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">clientIPs</span><span class="p">);</span>
+    <span class="n">DanceObj</span><span class="p">.</span><span class="n">Host</span><span class="p">(</span><span class="n">networkType</span><span class="p">,</span> <span class="n">maxAmountConnections</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="n">clientIPs</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="k">else</span>
 <span class="p">{</span>
-    <span class="c1">//Connect second</span>
-    <span class="n">DanceObj</span><span class="p">.</span><span class="n">Connect</span><span class="p">(</span><span class="n">networkType</span><span class="p">,</span> <span class="n">hostIP</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">DanceObj</span><span class="p">.</span><span class="n">Connect</span><span class="p">(</span><span class="n">networkType</span><span class="p">,</span> <span class="n">hostIP</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -288,7 +289,7 @@ The connection will be determined based on this value.</li>
 <p>Sending messages between client and host is done using set packages.
 These packages almost all have the same format: <br />
 <em>“Name PackageName Value1 Value2 Value3 etc”</em>
-<br />It could also specify for whom, in that case there will also be a <em>‘-ToAll’</em> or <em>‘-ToCl1’</em> in front.
+<br />It could also specify for whom, in that case there will also be a <em>‘-ToAll’</em> or <em>‘-ToCl’</em> in front.
 <br />The format is not that interesting, since it will be mostly handled internally.
 This is not the case with the callback function (I will get to this later).</p>
 
@@ -313,12 +314,12 @@ You can still change the package after creating it:</p>
 </ul>
 
 <p>Example</p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Adding time to package</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Adding time to a package</span>
 <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Time</span> <span class="o">=</span> <span class="n">return_current_time_and_date</span><span class="p">();</span>
 
 <span class="n">DanceObj</span><span class="p">.</span><span class="n">AddParametersToPackage</span><span class="p">(</span><span class="s">"TimeAndDate"</span><span class="p">,</span> <span class="n">Time</span><span class="p">);</span>
 
-<span class="c1">//Adding 10 random ints to the package</span>
+<span class="c1">//Adding 10 random ints to a package</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">DanceObj</span><span class="p">.</span><span class="n">AddDataToParameter</span><span class="p">(</span><span class="s">"Values"</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">rand</span><span class="p">());</span>
@@ -329,14 +330,21 @@ You can still change the package after creating it:</p>
 <p><strong>Sending Packages</strong><br /></p>
 
 <p>Sending the package is as simple.</p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">sendPackage</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">PackageName</span><span class="p">);</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">sendPackage</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">PackageName</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">important</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
 </code></pre></div></div>
 <p>This will send the package to all other peers except yourself. 
 <br />You can also send a package to a specific connection;</p>
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">sendPackageTo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">PackageName</span><span class="p">,</span> <span class="kt">int</span> <span class="n">themID</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">OnlyToHost</span><span class="p">);</span>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">sendPackageTo</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">PackageName</span><span class="p">,</span> <span class="kt">int</span> <span class="n">themID</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">OnlyToHost</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">important</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
 </code></pre></div></div>
 <p>Every number is a different connection, this is decided by the host. Therefor, if you send it to a specific person, you send it first to the host which then will check to who it will be send.
 <br />You can also send to yourself using <font color="#962f2f">sendToSelf</font>().</p>
+
+<p>The <strong>important</strong> parameter is (as its name implies), pretty important.<br />
+You may send positions of player every tick when possible. But with enough packages, the storage can fill up eventually.<br />
+This causes some packages to be lost when too far in the storage.<br />
+When wanting to send messages which have higher priority, you can use this parameter and mark the messages as important.<br />
+These messages will be handled with way more care, even making sure when the package is dropped or delayed that it will arive.</p>
 
 <p><strong>Receiving Packages</strong></p>
 
@@ -412,47 +420,51 @@ Example:</p>
 
 <p>There are some extra functions that need to be user or can be handy:</p>
 
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;If we are using hole punching to connect to another client, </span>
-<span class="c1">/// this connection has to stay alive. Thus calling KeepAlive every minute is nessecary.&lt;/summary&gt;</span>
-<span class="kt">void</span> <span class="nf">KeepAlive</span><span class="p">(</span><span class="kt">float</span> <span class="n">deltaTime</span><span class="p">);</span>
-
-<span class="c1">/// &lt;summary&gt;Retrieve the IP of this device, !!Also sets the IP type (IPV4/IPV6)!!&lt;/summary&gt;</span>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">/// &lt;summary&gt;Retrieve the IP of this device, !!Also sets the IP type (IPV4/IPV6)!!&lt;/summary&gt;</span>
 <span class="c1">/// &lt;param name="publicIP"&gt;Do we want the public or private IP?&lt;/param&gt;</span>
 <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="nf">getIP</span><span class="p">(</span><span class="kt">bool</span> <span class="n">publicIP</span><span class="p">);</span>
 
-<span class="c1">/// &lt;summary&gt;Before calling this function calculateTotalConnections() must have been called.</span>
-<span class="c1">/// Does not include our own connection&lt;/summary&gt;</span>
-<span class="kt">int</span> <span class="nf">getTotalConnections</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">TotalConnections</span><span class="p">;</span> <span class="p">}</span>
+<span class="c1">/// &lt;summary&gt;Get total amount of current connections, does not include our own connection&lt;/summary&gt;</span>
+<span class="kt">int</span> <span class="nf">getTotalConnections</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">totalConnections</span><span class="p">;</span> <span class="p">}</span>
 
 <span class="c1">/// &lt;summary&gt;Are we the host?&lt;/summary&gt;</span>
-<span class="kt">bool</span> <span class="n">getIfHost</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">host</span><span class="p">;</span> <span class="p">}</span>
+<span class="kt">bool</span> <span class="n">getIfHost</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">isHost</span><span class="p">;</span> <span class="p">}</span>
 
-<span class="c1">///&lt; summary&gt;Set manually ipv&lt;/summary&gt;</span>
-<span class="c1">/// &lt;param name="IPV"&gt;2 == IPV4, 23 == IPV6&lt;/param&gt;</span>
-<span class="c1">/// &lt;param name="ForceIPV4"&gt;Forves IPV4 even if we have IPV6&lt;/param&gt;</span>
-<span class="kt">void</span> <span class="n">setIPV</span><span class="p">(</span><span class="kt">int</span> <span class="n">IPV</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">ForceIPV4</span><span class="p">)</span>
+<span class="c1">///&lt; summary&gt;Returns if ipv4 is used or ipv6&lt;/summary&gt;</span>
+<span class="kt">bool</span> <span class="n">getUseIPV4</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="n">ipv</span> <span class="o">==</span> <span class="mi">2</span><span class="p">);</span> <span class="p">}</span>
+
+<span class="c1">/// &lt;summary&gt;Sets to force ipv4 if you for example want to get the public IP before connecting&lt;/summary&gt;</span>
+<span class="kt">void</span> <span class="n">setForceIPV4</span><span class="p">(</span><span class="kt">bool</span> <span class="n">_forceIPV4</span><span class="p">)</span> <span class="p">{</span> <span class="n">forceIPV4</span> <span class="o">=</span> <span class="n">_forceIPV4</span><span class="p">;</span> <span class="p">};</span>
+
+<span class="c1">/// &lt;summary&gt;Check if the holepunching succeeded&lt;/summary&gt;</span>
+<span class="c1">/// &lt;returns&gt;0 if not holepunching at all, 1 if holepunching at the moment, 2 if holepunching succeeded&lt;/returns&gt;</span>
+<span class="kt">int</span> <span class="n">holePunchSucceeded</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">ipv</span> <span class="o">=</span> <span class="n">IPV</span><span class="p">;</span>
-    <span class="n">forceIPV4</span> <span class="o">=</span> <span class="n">ForceIPV4</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">holePunchingStatus</span><span class="p">;</span>
 <span class="p">}</span>
+
+<span class="c1">/// &lt;summary&gt;Check if a certain player has disconnected&lt;/summary&gt;</span>
+<span class="c1">/// &lt;param name="userID"&gt;Number of the peer&lt;/param&gt;</span>
+<span class="c1">/// &lt;param name="remove"&gt;Remove value from vector of names&lt;/param&gt;</span>
+<span class="c1">/// &lt;returns&gt;True if vector of disconnected users contains this name&lt;/returns&gt;</span>
+<span class="kt">bool</span> <span class="n">isDisconnected</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">userID</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">remove</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>The <font color="#962f2f">KeepAlive</font>() function is necessary to be called from the host if hole punching is done. The connection needs to be updated at least every 60 seconds (which the function does). This could be replaced by an own made function which sends a package after a certain time.</p>
+<p>When choosing to publicly connect with another peer, the code will try to holepunch through the network to establish a connection.<br />
+This is all threaded, meaning that your code will be able to continue, in the meantime, you do have to wait for the holepunch to succeed before using the connection.</p>
+<font color="#962f2f">holePunchSucceeded</font>
+<p>() checks if we established a connection with everyone we wanted.</p>
 
 <h2 id="issues-downsides-and-potential-improvements">Issues, downsides and potential improvements</h2>
 
 <p>Due to the time contraint I had, there are still some things not integrated into the library which could cause issues.</p>
 
 <ul>
-  <li>In general there could be some bugs, especially in the public connection since this is not well-tested.</li>
-  <li>The library does not handle a disconnection of a client. This I want to try and fix soon.</li>
-  <li>There is no log-system, so if something does not work, it is pretty hard to find out why.</li>
-  <li>If <font color="#962f2f">connect</font>() is done before <font color="#962f2f">host</font>(), the connect will never do anything and potentially break. This is due to connect only trying once to connect.</li>
-  <li>If trying to use <font color="#962f2f">getPackage</font>(), it could be that the package never arrives due to the library not being able to handle hunderds of packages at the same time. <br />
+  <li>In general there could be some bugs, especially in the public connection since this is not well-tested.
 It could also be stated that the list of messages stored has a maximum of 100, if any more come, the last message will be destroyed.</li>
   <li>Since the library is not using any third party systems, everyone has to share their IP with eachother. This is very unpracticle and could cause some security issues.</li>
-  <li>I would like to improve <font color="#962f2f">setIPV</font>(), since it could a bit confusing on how it works and how it changes the connections.</li>
-  <li>On top of that, another thread for the hole punching, since now the library blocks until all connections succeeded which could be an issue.</li>
+  <li>When a connection has established and the code has succeeded holepunching, you will not be able to holepunch/connect to someone else until fully reset.</li>
+  <li>Speaking about resetting, currently it is very hard if even possibly to fully reset all connections and start again.</li>
 </ul>
 
 <h2 id="conclusion">Conclusion</h2>
@@ -497,7 +509,7 @@ As seen above the library has many issues that I would like to solve.</p>
      <!--------------------Networking--------------------->
 
   <div class="sidebar-nav-item">
-    <a href="/pages/Projects/Networking.html" class="sidebar-nav-name">Blender Multiplayer</a>
+    <a href="/pages/Projects/Networking.html" class="sidebar-nav-name">Networking</a>
     <a href="/pages/Projects/Networking.html" class="sidebar-nav-link">
       <img src="/assets/media/DiaDenstraPoster.png" alt="Project" class="sidebar-nav-icon">
     </a>
@@ -605,7 +617,7 @@ As seen above the library has many issues that I would like to solve.</p>
      <!--------------------Ray Tracing--------------------->
 
  <div class="sidebar-nav-item">
-    <a href="/pages/Projects/RayTrace.html" class="sidebar-nav-name">Going Bonkers!</a>
+    <a href="/pages/Projects/RayTrace.html" class="sidebar-nav-name">Ray Tracing</a>
     <a href="/pages/Projects/RayTrace.html" class="sidebar-nav-link">
       <img src="/assets/media/RayTrace/Thumbnail.png" alt="Project" class="sidebar-nav-icon">
     </a>

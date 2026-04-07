@@ -529,6 +529,121 @@ body.My_Projects{
     background-color: $color-palet4; 
   }
 
+  // Horizontal layout modifier
+  &.horizontal {
+    flex-direction: row;
+    width: 100%;
+    gap: 0;
+    position: relative;
+
+    img, video {
+      flex-shrink: 0;
+    }
+
+    .content-column {
+      display: flex;
+      flex-direction: column;
+      flex: 1; 
+      min-width: 0; 
+      width: auto; 
+      height: 100%;
+      justify-content: space-evenly;
+      margin-left: 15px; 
+      position: static;
+      padding: 10px, 0;
+    }
+    
+    .title-row {
+      margin-top: 0;
+      margin-left: 0;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
+      flex-grow: 1;
+      width: 100%;
+    }
+
+    .title {
+      width: 100%;
+    }
+
+    .types-column{
+      position: absolute;
+      left: 315px;
+      top: 5px;
+      display: flex;
+      gap: 5px;
+    }
+
+    .time {
+      position: absolute;
+      top: 5px;
+      right: 5px
+    }
+
+    .date {
+      position: absolute;
+      bottom: 5px;
+      left: 315px;
+    }
+
+    .description-row {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-top: 10px;
+    }
+
+    .description {
+      font-size: 16px;
+      color: black;
+      text-align: center;
+      padding: 7px;
+      width: 100%;
+      min-height: auto;
+      flex: 1;
+
+
+      &::before {
+      content: "";
+      font-weight: bold;
+      }
+    }
+
+  }
+
+  // Right-aligned image variant
+  &.horizontal.image-right {
+    flex-direction: row-reverse;
+    
+    .content-column {
+      margin-left: 0;
+      margin-right: 15px;
+    }
+
+    .title-row {
+      align-items: stretch;
+    }
+
+    .types-column {
+      left: 5px;
+      right: auto;
+    }
+  
+    .time {
+      left: auto;
+      right: 315px;
+    }
+
+    .date {
+      left: 5px;
+      right: auto;
+    }
+  }
+
+
   .title-row{
     display: flex;
     width: 100%;
@@ -553,6 +668,15 @@ body.My_Projects{
     border: 1px solid black;
     border-radius: 5px;
     object-fit: cover;
+  }
+
+  .content-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 10px;
   }
 
   .types-column{
@@ -595,6 +719,7 @@ body.My_Projects{
     align-items: center;
     justify-content: center;
     right: 0;
+    top: 0;
     border-radius: 10px;
     background-color: #f2f543;
     font-size: 16px;

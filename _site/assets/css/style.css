@@ -433,16 +433,34 @@ body.My_Projects::before { content: ''; position: fixed; top: 0; left: 0; width:
 .page-info-button[data-type="School - Team"] { background-color: #489b60; }
 .page-info-button[data-type="Self-Study - Solo"] { background-color: #489b60; }
 .page-info-button[data-type="Self-Study - Team"] { background-color: #489b60; }
+.page-info-button.horizontal { flex-direction: row; width: 100%; gap: 0; position: relative; }
+.page-info-button.horizontal img, .page-info-button.horizontal video { flex-shrink: 0; }
+.page-info-button.horizontal .content-column { display: flex; flex-direction: column; flex: 1; min-width: 0; width: auto; height: 100%; justify-content: space-evenly; margin-left: 15px; position: static; padding: 10px, 0; }
+.page-info-button.horizontal .title-row { margin-top: 0; margin-left: 0; flex-direction: column; align-items: stretch; justify-content: center; flex-grow: 1; width: 100%; }
+.page-info-button.horizontal .title { width: 100%; }
+.page-info-button.horizontal .types-column { position: absolute; left: 315px; top: 5px; display: flex; gap: 5px; }
+.page-info-button.horizontal .time { position: absolute; top: 5px; right: 5px; }
+.page-info-button.horizontal .date { position: absolute; bottom: 5px; left: 315px; }
+.page-info-button.horizontal .description-row { display: flex; width: 100%; align-items: center; justify-content: center; position: relative; margin-top: 10px; }
+.page-info-button.horizontal .description { font-size: 16px; color: black; text-align: center; padding: 7px; width: 100%; min-height: auto; flex: 1; }
+.page-info-button.horizontal .description::before { content: ""; font-weight: bold; }
+.page-info-button.horizontal.image-right { flex-direction: row-reverse; }
+.page-info-button.horizontal.image-right .content-column { margin-left: 0; margin-right: 15px; }
+.page-info-button.horizontal.image-right .title-row { align-items: stretch; }
+.page-info-button.horizontal.image-right .types-column { left: 5px; right: auto; }
+.page-info-button.horizontal.image-right .time { left: auto; right: 315px; }
+.page-info-button.horizontal.image-right .date { left: 5px; right: auto; }
 .page-info-button .title-row { display: flex; width: 100%; align-items: center; justify-content: center; position: relative; margin-top: 10px; }
 .page-info-button .title { font-size: 22px; color: black; border-radius: 5px; padding: 7px; flex-grow: 1; text-align: center; }
 .page-info-button img, .page-info-button video { width: 300px; height: 300px; border: 1px solid black; border-radius: 5px; object-fit: cover; }
+.page-info-button .content-column { display: flex; flex-direction: column; align-items: center; justify-content: center; flex-grow: 1; gap: 10px; }
 .page-info-button .types-column { display: flex; gap: 5px; position: absolute; left: 0; }
 .page-info-button .type { display: flex; align-items: center; justify-content: center; border-radius: 10px; background-color: #f8f8f8; font-size: 16px; color: black; padding: 5px; height: 32px; width: 32px; /* Set color based on type */ }
 .page-info-button .type[data-type="🏫"] { background-color: #5ed549; }
 .page-info-button .type[data-type="🏠"] { background-color: #7a6eae; }
 .page-info-button .type[data-type="👤"] { background-color: #00d5ff; }
 .page-info-button .type[data-type="👥"] { background-color: #d85eb1; }
-.page-info-button .time { display: flex; position: absolute; align-items: center; justify-content: center; right: 0; border-radius: 10px; background-color: #f2f543; font-size: 16px; color: black; padding: 5px; height: 32px; }
+.page-info-button .time { display: flex; position: absolute; align-items: center; justify-content: center; right: 0; top: 0; border-radius: 10px; background-color: #f2f543; font-size: 16px; color: black; padding: 5px; height: 32px; }
 .page-info-button .description-row { display: flex; width: 100%; align-items: center; justify-content: center; position: relative; margin-top: 10px; }
 .page-info-button .description { height: 96px; margin-top: 10px; font-size: 16px; color: black; transition: transform 0.3s ease-in-out; /* Smooth scaling transition */ padding: 7px; overflow-wrap: break-word; white-space: normal; }
 .page-info-button .description::before { content: "Description: "; font-weight: bold; }

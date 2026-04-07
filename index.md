@@ -4,6 +4,75 @@ title: "Home"
 section: "Home"
 ---
 
+# Projects
+
+{::nomarkdown}
+<a href="Pages/Projects/Networking.html" class="page-info-button horizontal" data-type="School - Solo">
+    <img src="/assets/media/Pitfall2D/Thumbnail.png" alt="Image1">
+    <div class="content-column">
+        <div class="title-row">
+            <span class="title">Networking</span>
+        </div>
+        <div class="types-column">
+            <span class="type" data-type="🏫">🏫</span>
+            <span class="type" data-type="👤">👤</span>
+        </div>
+        <span class="time"> 18 weeks</span>
+        <div class="description"> 
+        I created a networking library using windows <strong style="color:black;"><u>Winsock2</u></strong>, this enables programmers to create advanced network applications. <br>
+        This library was made to easily add to your own project and use. <br>
+        I myself, used this library to create multiple multiplayer games, including a <strong style="color:black;"><u>2D shooter</u></strong> and <strong style="color:black;"><u>multiplayer Blender</u></strong>. <br>
+        </div>
+        <span class="date">2024 / 2025</span>
+    </div>
+</a>
+
+<br>
+
+<a href="Pages/Projects/WeatherSimulation.html" class="page-info-button horizontal image-right" data-type="Self-Study - Solo">
+    <img src="/assets/media/WeatherSim/Title.png" alt="Image1">
+    <div class="content-column">
+        <div class="title-row">
+            <span class="title">Weather Simulation</span>
+        </div>
+        <div class="types-column">
+            <span class="type" data-type="🏠">🏠</span>
+            <span class="type" data-type="👤">👤</span>
+        </div>
+        <span class="time"> 1 year</span>
+        <div class="description"> 
+        I am very obsessed with the weather, thus I decided to create a weather simulation from scratch. <br>
+        This simulates the air flow through the troposphere. <br> 
+        Creating a simulation like this involves creating a <strong style="color:black;"><u>fluid simulation</u></strong>, usage of <strong style="color:black;"><u>complex formulas</u></strong> and <strong style="color:black;"><u>optimization</u></strong> using the GPU (CUDA in my case).
+        </div>
+        <span class="date">2025 / 2026</span>
+    </div>
+</a>
+
+<br>
+
+<a href="Pages/Projects/GoingBonkers.html" class="page-info-button horizontal" data-type="School - Team">
+<img src="/assets/media/GoingBonkers/Title.png" alt="Image1">
+    <div class="content-column">
+        <div class="title-row">
+            <span class="title">GoingBonkers!</span>
+        </div>
+        <div class="types-column">
+            <span class="type" data-type="🏫">🏫</span>
+            <span class="type" data-type="👥">👥</span>
+        </div>
+        <span class="time"> 8 weeks</span>
+        <div class="description"> 
+        Together with a team of artists, designers and programmers, I helped creating a game called GoingBonkers!. <br>
+        This game was made inside <strong style="color:black;"><u>Unreal Engine</u></strong> using <strong style="color:black;"><u>blueprints</u></strong> <br>
+        This was during the last block of my second year at BUAS, with the main objective being; working in a big team on a project.
+        <span class="date">2025</span>
+        </div>
+    </div>
+</a>
+{:/nomarkdown}
+
+
 # About me
 
 <div style="float: right; justify-content: right;">
