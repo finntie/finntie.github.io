@@ -7,7 +7,7 @@ section: "Home"
 # Projects
 
 {::nomarkdown}
-<a href="Pages/Projects/Networking.html" class="page-info-button horizontal" data-type="School - Solo">
+<a href="pages/Projects/Networking.html" class="page-info-button horizontal" data-type="School - Solo">
     <img src="/assets/media/Pitfall2D/Thumbnail.png" alt="Image1">
     <div class="content-column">
         <div class="title-row">
@@ -29,7 +29,7 @@ section: "Home"
 
 <br>
 
-<a href="Pages/Projects/WeatherSimulation.html" class="page-info-button horizontal image-right" data-type="Self-Study - Solo">
+<a href="pages/Projects/WeatherSimulation.html" class="page-info-button horizontal image-right" data-type="Self-Study - Solo">
     <img src="/assets/media/WeatherSim/Title.png" alt="Image1">
     <div class="content-column">
         <div class="title-row">
@@ -51,7 +51,7 @@ section: "Home"
 
 <br>
 
-<a href="Pages/Projects/GoingBonkers.html" class="page-info-button horizontal" data-type="School - Team">
+<a href="pages/Projects/GoingBonkers.html" class="page-info-button horizontal" data-type="School - Team">
 <img src="/assets/media/GoingBonkers/Title.png" alt="Image1">
     <div class="content-column">
         <div class="title-row">
