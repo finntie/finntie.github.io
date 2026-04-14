@@ -17,12 +17,16 @@ These I will discuss loosely on this page. For more in depth, read the coming so
 
 <div style="display: flex; justify-content: left; align-items: flex-start; gap: 20px; margin: 0 auto;">
 
-<div style="flex: 1;">
+<div style="flex: 1;" markdown="1">
 
 ### Fluid Simulation
 
 A weather simulation is mainly based on a fluid simulation.  
 It basically simulates the air flowing, with the air being the 'fluid' in this simulation.  
+
+On the right you see a timelapse of the simulation I created.  
+A cloud is forming and growing throughout the video inside a small environment (32x64x32).  
+
 To get this fluid simulation working, I used the Navier Stokes equations.  
 A famous derived form of this equation is:   
 
@@ -32,6 +36,12 @@ This basically represents the flow of air, which is an addition of different for
 For our simulation, we represent an incompressible flow. Here, we simulate that air is not able to compress.  
 With this idea in mind, we can change this equation into:  
 
+$du/dt = v∇^2u -∇(p/ρ) + (1/ρ)f$
+
+$v∇^2u$ is the velocity term, this handles the flow of air through the simulation.  
+$-∇(p/ρ)$ are the pressure forces over the density.  
+And $(1/ρ)f$ is mainly about the $f$ which are the external forces (like gravity or buoyancy).
+
 </div>
 
 <video width="40%" style="flex-shrink: 0;" controls>
@@ -39,12 +49,6 @@ With this idea in mind, we can change this equation into:
 </video>
 
 </div>
-
-$du/dt = v∇^2u -∇(p/ρ) + (1/ρ)f$
-
-$v∇^2u$ is the velocity term, this handles the flow of air through the simulation.  
-$-∇(p/ρ)$ are the pressure forces over the density.  
-And $(1/ρ)f$ is mainly about the $f$ which are the external forces (like gravity or buoyancy).
 
 In our code, simplified, this looks like:
 ```cpp
