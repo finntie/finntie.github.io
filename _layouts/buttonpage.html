@@ -27,7 +27,7 @@
       
       {% assign sorted_pages = site.pages | sort: 'nav_order' %}
       {% for nav_page in sorted_pages %}
-        {% unless nav_page.path contains "Blogs/" or nav_page.path contains "Projects/" %}
+        {% unless nav_page.path contains "Blogs/" or nav_page.path contains "Projects/" or nav_page.path contains "Downloads/" %}
           <a href="{{ nav_page.url }}" 
              class="btn {% if page.section == nav_page.section %}active{% endif %}" 
              data-icon="{{ nav_page.icon }}" 

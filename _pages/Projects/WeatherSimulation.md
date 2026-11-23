@@ -114,7 +114,7 @@ I leaned a lot during the making of this weather simulation, not only in code te
 Many different systems or challenges come forward with making such a big project, and I really enjoy picking these up and trying to understand them.  
 I am definitely not done with this project, since there is enough I may add to it:
 - Optimize
-- Save simulation and replay
-- Visualize weather, possibly using raytrace or marching
+- Multiple resolutions
+- Dynamic resolution based on height
 
 And many more smaller features plus bigger ones that I have not planned yet.  

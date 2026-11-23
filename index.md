@@ -78,8 +78,8 @@ section: "Home"
 <div style="float: right; justify-content: right;">
 <img src="/assets/media/extras/face.jpg" alt="FaceImage" width="200px" style="margin: 0px 20px 0px 0; border-radius: 30px">
 </div>
-My name is Finn Thiesen, I am 19 years old.<br>
-I am currently studying <strong style="color:black;"><u>C++</u></strong> programming at the BUAS in Breda as a year 3. <br>
+My name is Finn Thiesen, I am 20 years old.<br>
+I am currently studying <strong style="color:black;"><u>C++</u></strong> programming at the BUAS in Breda as a year 4. <br>
 This personal website contains information about my programming career. 
 This includes blogs and projects I created.
 
